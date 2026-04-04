@@ -1,5 +1,24 @@
 User-agent: *
 Allow: /
 
+# 禁止爬取管理后台（如果有）
+Disallow: /admin/
+Disallow: /private/
+
+# 允许所有搜索引擎索引
+Allow: /*.html$
+Allow: /*.css$
+Allow: /*.js$
+
 # 网站地图
-Sitemap: https://www.shifei.world/sitemap.xml
+Sitemap: https://shifei.world/sitemap.xml
+
+# 特定搜索引擎优化
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Crawl-delay: 2
