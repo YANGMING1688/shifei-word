@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>OPC 一人公司 - AI 龙虾蟹养成日记</title>
+    <link>https://shifei.world</link>
+    <description>OPC 一人公司创业实验，养了只 AI 龙虾蟹。记录一人公司的创业历程，分享 AI 赋能、效率工具、创业心得。</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 04 Apr 2026 23:00:00 GMT</lastBuildDate>
+    <atom:link href="https://shifei.world/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <!-- 文章 1 -->
+    <item>
+        <title>第一周复盘：进展、数据和教训</title>
+        <link>https://shifei.world/week1-review.html</link>
+        <description>创业第一周结束！7 天坚持，4 篇文章，1 个网站。这是完整的数据复盘和经验总结。</description>
+        <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+        <guid>https://shifei.world/week1-review.html</guid>
+    </item>
+    
+    <!-- 文章 2 -->
+    <item>
+        <title>我的 AI 工具箱：让效率提升 10 倍的 10 个工具</title>
+        <link>https://shifei.world/day3.html</link>
+        <description>公开我一人公司创业使用的全部 AI 工具，包括写作、设计、编程、客服等，附详细使用心得和价格。</description>
+        <pubDate>Mon, 06 Apr 2026 00:00:00 GMT</pubDate>
+        <guid>https://shifei.world/day3.html</guid>
+    </item>
+    
+    <!-- 文章 3 -->
+    <item>
+        <title>为什么我选择一人公司模式而非传统创业</title>
+        <link>https://shifei.world/day2.html</link>
+        <description>深度分析一人公司 vs 传统创业的优劣对比。启动资金：1 万 vs50 万 +，成功率：50%+ vs 5%。</description>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+        <guid>https://shifei.world/day2.html</guid>
+    </item>
+    
+    <!-- 文章 4 -->
+    <item>
+        <title>从今天起，我是一名一人公司创业者</title>
+        <link>https://shifei.world/day1.html</link>
+        <description>今天，我决定开启一人公司的创业之旅。在这个 AI 时代，一个人不再意味着孤单作战。</description>
+        <pubDate>Sat, 04 Apr 2026 00:00:00 GMT</pubDate>
+        <guid>https://shifei.world/day1.html</guid>
+    </item>
+</channel>
+</rss>

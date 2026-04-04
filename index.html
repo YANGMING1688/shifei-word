@@ -26,6 +26,17 @@
     <meta name="twitter:description" content="OPC 一人公司创业实验，养了只 AI 龙虾蟹。记录一人公司的创业历程，分享 AI 赋能、效率工具、创业心得。">
     <meta name="twitter:image" content="https://shifei.world/og-image.png">
     
+    <!-- PWA 支持 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0066ff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="OPC 一人公司">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    
+    <!-- RSS 订阅 -->
+    <link rel="alternate" type="application/rss+xml" title="OPC 一人公司 - AI 龙虾蟹养成日记" href="/feed.xml">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
@@ -947,6 +958,17 @@
         visitCount++;
         localStorage.setItem('visitCount', visitCount);
         console.log('🦞 你是第 ' + visitCount + ' 位访客！');
+        
+        // 注册 Service Worker（PWA 支持）
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful:', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed:', err);
+                });
+            });
+        }
     </script>
 </body>
 </html>
