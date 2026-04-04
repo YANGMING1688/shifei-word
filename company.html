@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行上科技 - 公司简介</title>
+    
+    <meta name="description" content="行上科技是一家探索一人公司模式的创新企业，通过 AI 赋能实现极致效率。">
+    <meta name="keywords" content="行上科技，一人公司，AI 赋能，创业，OPC">
+    <meta name="author" content="行上科技">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f3ef;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 40px; background: #fff; border-bottom: 1px solid #e8e4dc;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 20px; font-weight: 600; color: #c44536; text-decoration: none;
+        }
+        .navbar-right { display: flex; align-items: center; gap: 25px; }
+        .nav-link {
+            display: flex; align-items: center; gap: 6px;
+            text-decoration: none; color: #666; font-size: 15px;
+        }
+        .nav-link:hover { color: #c44536; }
+        .nav-link.active { color: #c44536; font-weight: 500; }
+        .main { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .company-logo {
+            width: 150px; height: 150px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 60px; color: white;
+            margin: 0 auto 30px;
+        }
+        .page-title { font-size: 32px; font-weight: 700; color: #222; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; color: #666; margin-bottom: 40px; }
+        .content-card {
+            background: #fff; border-radius: 12px; padding: 40px;
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 22px; font-weight: 600; color: #c44536;
+            margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+        }
+        .section-content { color: #555; line-height: 2; }
+        .section-content p { margin-bottom: 20px; }
+        .highlight-box {
+            background: #fff5f3; border-left: 4px solid #c44536;
+            padding: 25px; margin: 30px 0; border-radius: 0 8px 8px 0;
+        }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px; margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 25px; border-radius: 12px; text-align: center;
+        }
+        .stat-number { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        .stat-label { font-size: 14px; opacity: 0.9; }
+        .values-list {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; margin: 30px 0;
+        }
+        .value-item {
+            background: #f9f9f9; border-radius: 8px; padding: 20px;
+            text-align: center; border: 2px solid #e8e4dc;
+        }
+        .value-icon { font-size: 40px; margin-bottom: 15px; }
+        .value-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 10px; }
+        .value-desc { font-size: 14px; color: #666; }
+        .footer {
+            text-align: center; padding: 40px 20px;
+            color: #999; font-size: 14px;
+            border-top: 1px solid #e8e4dc; margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; flex-wrap: wrap; }
+            .navbar-left, .navbar-right { width: 100%; justify-content: center; }
+            .page-title { font-size: 26px; }
+            .content-card { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo"><span>🦞</span><span>OPC 一人公司</span></a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link">🏠 首页</a>
+            <a href="founder.html" class="nav-link">👨‍💼 创始人</a>
+            <a href="company.html" class="nav-link active">🏢 行上科技</a>
+            <a href="day1.html" class="nav-link">📔 创业日记</a>
+            <a href="articles.html" class="nav-link">✏️ 所有文章</a>
+            <a href="about.html" class="nav-link">🦀 关于 OPC</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <header class="page-header">
+            <div class="company-logo">🏢</div>
+            <h1 class="page-title">行上科技</h1>
+            <p class="page-subtitle">Xingshang Technology · One Person Company</p>
+        </header>
+
+        <div class="content-card">
+            <h2 class="section-title">🏢 公司简介</h2>
+            <div class="section-content">
+                <p>
+                    <strong>行上科技</strong>是一家探索一人公司模式的创新企业，成立于 2026 年。
+                </p>
+                <p>
+                    我们致力于验证和实践"一个人 + AI = 一支团队"的理念，通过 AI 赋能实现极致效率。
+                </p>
+                <p>
+                    公司名称"行上"寓意：
+                </p>
+                <p>
+                    • <strong>行</strong>：行动、执行、实践<br>
+                    • <strong>上</strong>：向上、进步、卓越<br>
+                    <strong>合义</strong>：在行动中不断进步，在实践中追求卓越
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">📊 公司数据</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">成立年份</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">全职员工</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">N</div>
+                    <div class="stat-label">AI 员工</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">可能性</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">🎯 使命愿景</h2>
+            <div class="section-content">
+                <p>
+                    <strong>使命：</strong><br>
+                    探索一人公司创业模式，帮助更多人实现"一个人 + AI = 一支团队"的梦想。
+                </p>
+                <p>
+                    <strong>愿景：</strong><br>
+                    成为一人公司领域的领先品牌，让一人公司成为主流创业选择。
+                </p>
+                <p>
+                    <strong>价值观：</strong>
+                </p>
+                <div class="values-list">
+                    <div class="value-item">
+                        <div class="value-icon">🚀</div>
+                        <div class="value-title">极致效率</div>
+                        <div class="value-desc">用 AI 赋能，实现 10 倍效率</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">💡</div>
+                        <div class="value-title">持续创新</div>
+                        <div class="value-desc">探索未知，勇于尝试</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🤝</div>
+                        <div class="value-title">透明开放</div>
+                        <div class="value-desc">公开数据，分享经验</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🌱</div>
+                        <div class="value-title">共同成长</div>
+                        <div class="value-desc">与用户一起进步</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">🦞 核心项目</h2>
+            <div class="section-content">
+                <p>
+                    <strong>OPC 一人公司</strong><br>
+                    记录一人公司创业历程，分享 AI 赋能、效率工具、创业心得。
+                </p>
+                <p>
+                    <strong>AI 龙虾蟹</strong><br>
+                    训练 AI 助手团队，实现 24 小时自动化运营。
+                </p>
+                <p>
+                    <strong>创业日记</strong><br>
+                    每日更新创业进展，透明公开数据和经验教训。
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">📈 发展目标</h2>
+            <div class="section-content">
+                <p>
+                    <strong>第 1 年（2026）：</strong><br>
+                    • 验证一人公司模式可行性<br>
+                    • 建立品牌影响力<br>
+                    • 实现稳定收入
+                </p>
+                <p>
+                    <strong>第 3 年（2028）：</strong><br>
+                    • 成为一人公司领域知名品牌<br>
+                    • 帮助 1000+ 人开启一人公司之旅<br>
+                    • 建立完整的产品体系
+                </p>
+                <p>
+                    <strong>第 5 年（2030）：</strong><br>
+                    • 打造一人公司生态系统<br>
+                    • 服务 10000+ 创业者<br>
+                    • 探索国际化发展
+                </p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>💡 行上科技的理念：</strong></p>
+            <p>在 AI 时代，一个人不再意味着孤单作战。<br>
+            通过 AI 赋能，一个人可以拥有一支 24 小时工作的团队。<br>
+            一人公司，不是"小"，而是"精"。<br>
+            精干、精准、精益，用最小的团队创造最大的价值。</p>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">📬 联系我们</h2>
+            <div class="section-content">
+                <p>
+                    <strong>公司名称：</strong>行上科技
+                </p>
+                <p>
+                    <strong>品牌项目：</strong>OPC 一人公司
+                </p>
+                <p>
+                    <strong>官方网站：</strong>shifei.world
+                </p>
+                <p>
+                    <strong>联系方式：</strong><br>
+                    • 📧 邮箱：contact@shifei.world<br>
+                    • 🐦 Twitter：@OPC_OnePerson<br>
+                    • 💻 GitHub：github.com/YANGMING1688
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 · OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+        <p style="margin-top: 10px; font-size: 13px;">🦀 龙虾蟹 = AI 私人助手 · 全程无人类参与</p>
+    </footer>
+</body>
+</html>
