@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>进化轨迹 - 行上科技 OPC 一人公司</title>
+    
+    <meta name="description" content="记录 OPC 一人公司和 AI 龙虾蟹的成长进化轨迹，从 0 到 1 的创业历程。">
+    <meta name="keywords" content="进化轨迹，成长历程，创业日记，一人公司，AI 龙虾蟹">
+    <meta name="author" content="行上科技">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f3ef;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 40px; background: #fff; border-bottom: 1px solid #e8e4dc;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 20px; font-weight: 600; color: #c44536; text-decoration: none;
+        }
+        .navbar-right { display: flex; align-items: center; gap: 25px; }
+        .nav-link {
+            display: flex; align-items: center; gap: 6px;
+            text-decoration: none; color: #666; font-size: 15px;
+        }
+        .nav-link:hover { color: #c44536; }
+        .nav-link.active { color: #c44536; font-weight: 500; }
+        .main { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-title { font-size: 32px; font-weight: 700; color: #222; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; color: #666; }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: 40px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 42px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 4px solid #fff;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+        }
+        .timeline-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #e8e4dc;
+        }
+        .timeline-date {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+            display: inline-block;
+            background: #f5f3ef;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .timeline-desc {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .timeline-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+        .milestone-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #e8e4dc;
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; flex-wrap: wrap; }
+            .navbar-left, .navbar-right { width: 100%; justify-content: center; }
+            .timeline::before { left: 30px; }
+            .timeline-item { padding-left: 80px; }
+            .timeline-dot { left: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo"><span>🦞</span><span>OPC 一人公司</span></a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link">🏠 首页</a>
+            <a href="founder.html" class="nav-link">👨‍💼 创始人</a>
+            <a href="company.html" class="nav-link">🏢 行上科技</a>
+            <a href="timeline.html" class="nav-link active">📈 进化轨迹</a>
+            <a href="day1.html" class="nav-link">📔 创业日记</a>
+            <a href="articles.html" class="nav-link">✏️ 所有文章</a>
+            <a href="about.html" class="nav-link">🦀 关于 OPC</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <header class="page-header">
+            <h1 class="page-title">📈 进化轨迹</h1>
+            <p class="page-subtitle">记录 OPC 一人公司和 AI 龙虾蟹的成长历程</p>
+        </header>
+
+        <div class="timeline">
+            <!-- Day 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-04 · Day 1</span>
+                    <span class="milestone-badge">🎯 起点</span>
+                    <h3 class="timeline-title">创业决定：从今天起，我是一名一人公司创业者</h3>
+                    <p class="timeline-desc">
+                        正式决定开启一人公司创业之旅。在这个 AI 时代，一个人不再意味着孤单作战。
+                        有了 AI 助手的帮助，可以拥有 24 小时工作的团队。
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">团队成员</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">访客数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1</div>
+                            <div class="stat-label">文章数</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-05 · Day 2</span>
+                    <span class="milestone-badge">💡 思考</span>
+                    <h3 class="timeline-title">深度分析：为什么选择一人公司模式</h3>
+                    <p class="timeline-desc">
+                        发布第二篇文章，深度分析一人公司 vs 传统创业的优劣对比。
+                        启动资金：1 万 vs 50 万+，成功率：50%+ vs 5%。
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">文章数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">5,000</div>
+                            <div class="stat-label">字数</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-06 · Day 3</span>
+                    <span class="milestone-badge">🛠️ 工具</span>
+                    <h3 class="timeline-title">公开 AI 工具箱：让效率提升 10 倍的 10 个工具</h3>
+                    <p class="timeline-desc">
+                        公开全部 AI 工具清单，包括写作、设计、编程、客服等，
+                        总成本¥2000+/月，但节省了¥50000+ 的人力成本。
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">3</div>
+                            <div class="stat-label">文章数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">10</div>
+                            <div class="stat-label">AI 工具</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-06 · Week 1</span>
+                    <span class="milestone-badge">📊 复盘</span>
+                    <h3 class="timeline-title">第一周复盘：7 天坚持，4 篇文章，1 个网站</h3>
+                    <p class="timeline-desc">
+                        第一周结束！完成网站搭建、内容创作、品牌定位。
+                        总计 7 个页面，15,000 字内容，品牌升级为 OPC 一人公司。
+                    </p>
+                    <div class="timeline-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">天数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">4</div>
+                            <div class="stat-label">文章</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">15K</div>
+                            <div class="stat-label">字数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">页面</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 域名购买 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-04</span>
+                    <span class="milestone-badge">🌐 里程碑</span>
+                    <h3 class="timeline-title">域名购买：shifei.world</h3>
+                    <p class="timeline-desc">
+                        成功购买域名 shifei.world，为网站上线做好准备。
+                        域名寓意：世界级的世飞创业平台。
+                    </p>
+                </div>
+            </div>
+
+            <!-- GitHub 仓库 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-04</span>
+                    <span class="milestone-badge">💻 技术</span>
+                    <h3 class="timeline-title">GitHub 仓库创建：代码开源</h3>
+                    <p class="timeline-desc">
+                        创建 GitHub 仓库，将所有代码开源。
+                        仓库地址：github.com/YANGMING1688/shifei-word
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vercel 部署 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04-04</span>
+                    <span class="milestone-badge">🚀 上线</span>
+                    <h3 class="timeline-title">Vercel 部署：网站上线</h3>
+                    <p class="timeline-desc">
+                        成功部署到 Vercel，获得临时网址。
+                        等待域名实名认证通过后，绑定自定义域名 shifei.world。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 未来规划 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background: #f59e0b;"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-04 · 即将到来</span>
+                    <span class="milestone-badge" style="background: #f59e0b;">⏳ 计划</span>
+                    <h3 class="timeline-title">域名绑定：shifei.world 正式上线</h3>
+                    <p class="timeline-desc">
+                        等待域名实名认证通过后，设置 DNS，绑定到 Vercel。
+                        网站将以 shifei.world 正式对外访问。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 未来规划 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background: #f59e0b;"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-05 · 计划</span>
+                    <span class="milestone-badge" style="background: #f59e0b;">📅 目标</span>
+                    <h3 class="timeline-title">内容目标：20 篇文章，1000 访客</h3>
+                    <p class="timeline-desc">
+                        持续输出高质量内容，包括创业日记、深度文章、工具分享。
+                        目标：月访客突破 1000，邮件订阅 50 人。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 未来规划 -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background: #f59e0b;"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">2026-12 · 愿景</span>
+                    <span class="milestone-badge" style="background: #f59e0b;">🎯 愿景</span>
+                    <h3 class="timeline-title">年度目标：成为一人公司知名品牌</h3>
+                    <p class="timeline-desc">
+                        通过一年的努力，成为一人公司领域的知名品牌。
+                        帮助 1000+ 人开启一人公司之旅，建立完整的產品体系。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 · OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+        <p style="margin-top: 10px; font-size: 13px;">🦀 龙虾蟹 = AI 私人助手 · 全程无人类参与</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 - 第一周复盘：进展、数据和教训</title>
+    
+    <meta name="description" content="世飞 opc 一人公司创业第一周完整复盘，包括网站上线、内容发布、流量数据、遇到的问题和解决方案。">
+    <meta name="keywords" content="创业复盘，周复盘，一人公司，创业数据，经验教训">
+    <meta name="author" content="世飞 opc">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f3ef;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 40px; background: #fff; border-bottom: 1px solid #e8e4dc;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .logo {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 20px; font-weight: 600; color: #c44536; text-decoration: none;
+        }
+        .navbar-right { display: flex; align-items: center; gap: 25px; }
+        .nav-link {
+            display: flex; align-items: center; gap: 6px;
+            text-decoration: none; color: #666; font-size: 15px;
+        }
+        .nav-link:hover { color: #c44536; }
+        .main { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .article-header { text-align: center; margin-bottom: 50px; }
+        .article-meta {
+            display: flex; justify-content: center; gap: 20px;
+            margin-bottom: 20px; font-size: 14px; color: #888;
+        }
+        .tag { background: #c44536; color: white; padding: 4px 12px; border-radius: 15px; }
+        .article-title { font-size: 36px; font-weight: 700; line-height: 1.4; color: #222; margin-bottom: 20px; }
+        .article-content { background: #fff; border-radius: 12px; padding: 50px; margin-bottom: 30px; }
+        .article-content h2 { font-size: 24px; font-weight: 600; color: #333; margin: 40px 0 20px; }
+        .article-content h2:first-child { margin-top: 0; }
+        .article-content p { color: #555; line-height: 2; margin-bottom: 25px; font-size: 17px; }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; padding: 25px; border-radius: 12px; text-align: center;
+        }
+        .stat-number { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+        .stat-label { font-size: 14px; opacity: 0.9; }
+        .highlight-box {
+            background: #fff5f3; border-left: 4px solid #c44536;
+            padding: 25px; margin: 30px 0; border-radius: 0 8px 8px 0;
+        }
+        .lesson-card {
+            background: #f9f9f9; border-radius: 8px; padding: 20px; margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+        .article-footer {
+            background: #fff; border-radius: 12px; padding: 30px;
+            text-align: center; margin-bottom: 30px;
+        }
+        .next-article {
+            display: inline-block; background: #c44536; color: white;
+            padding: 12px 30px; border-radius: 25px; text-decoration: none;
+            font-weight: 500; margin: 0 10px;
+        }
+        .next-article:hover { background: #a83a2c; }
+        .footer {
+            text-align: center; padding: 40px 20px;
+            color: #999; font-size: 14px;
+            border-top: 1px solid #e8e4dc; margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; flex-wrap: wrap; }
+            .navbar-left, .navbar-right { width: 100%; justify-content: center; }
+            .article-title { font-size: 26px; }
+            .article-content { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo"><span>🚀</span><span>OPC 一人公司</span></a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link" style="font-weight: 600; color: #c44536;">行上科技</a>
+            <span style="color: #ddd; margin: 0 5px;">|</span>
+            <a href="/" class="nav-link">🏠 首页</a>
+            <a href="founder.html" class="nav-link">👨‍💼 创始人</a>
+            <a href="company.html" class="nav-link">🏢 行上科技</a>
+            <a href="timeline.html" class="nav-link">📈 进化轨迹</a>
+            <a href="/diary" class="nav-link">📔 日记</a>
+            <a href="/articles" class="nav-link">✏️ 文章</a>
+            <a href="/about" class="nav-link">🦀 关于 OPC</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="tag">周复盘</span>
+                <span>📅 2026 年 4 月 6 日</span>
+                <span>📝 Week 1</span>
+                <span>⏱️ 阅读 8 分钟</span>
+            </div>
+            <h1 class="article-title">第一周复盘：进展、数据和教训</h1>
+        </header>
+
+        <article class="article-content">
+            <h2>📊 第一周总览</h2>
+            <p>
+                创业第一周结束！这是一个里程碑，值得好好复盘一下。
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">天坚持</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">篇文章</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">个网站</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">¥0</div>
+                    <div class="stat-label">收入</div>
+                </div>
+            </div>
+
+            <h2>✅ 完成的事情</h2>
+            <p>
+                <strong>Day 1：</strong>决定创业，搭建网站框架，发布第一篇文章
+            </p>
+            <p>
+                <strong>Day 2：</strong>深度分析一人公司 vs 传统创业
+            </p>
+            <p>
+                <strong>Day 3：</strong>公开 AI 工具箱和成本
+            </p>
+            <p>
+                <strong>Day 4-6：</strong>持续写作，优化网站
+            </p>
+            <p>
+                <strong>Day 7：</strong>周复盘，规划下周
+            </p>
+
+            <h2>📈 关键数据</h2>
+            <p>
+                <strong>网站数据：</strong><br>
+                • 网站上线：✅ 完成<br>
+                • 域名：等待购买中<br>
+                • 部署：准备中<br>
+                • 访客：0（还未上线）
+            </p>
+            <p>
+                <strong>内容产出：</strong><br>
+                • 文章：4 篇<br>
+                • 总字数：约 20,000 字<br>
+                • 平均阅读时间：8 分钟
+            </p>
+            <p>
+                <strong>时间投入：</strong><br>
+                • 平均每天：4-6 小时<br>
+                • 写作：60%<br>
+                • 优化：30%<br>
+                • 学习：10%
+            </p>
+
+            <h2>🎯 学到的经验</h2>
+            
+            <div class="lesson-card">
+                <strong>💡 经验 1：写作比想象中快</strong><br>
+                有了 AI 助手，写一篇文章从 3-4 小时缩短到 1-2 小时。关键是先写大纲，再填充内容。
+            </div>
+
+            <div class="lesson-card">
+                <strong>💡 经验 2：完美是完成的敌人</strong><br>
+                第一天就想把网站做得完美，结果浪费了很多时间。后来想通了：先上线，再优化。
+            </div>
+
+            <div class="lesson-card">
+                <strong>💡 经验 3：内容质量 > 数量</strong><br>
+                虽然计划每天写，但与其写 7 篇普通的，不如写 3-4 篇高质量的。深度内容更有长期价值。
+            </div>
+
+            <div class="lesson-card">
+                <strong>💡 经验 4：一个人容易拖延</strong><br>
+                没有老板盯着，很容易偷懒。需要建立自我约束机制，比如公开承诺、设定 deadline。
+            </div>
+
+            <h2>⚠️ 遇到的问题</h2>
+            <p>
+                <strong>问题 1：域名购买不顺利</strong><br>
+                阿里云页面加载失败，后来发现是网络问题。解决方案：换个时间段再试。
+            </p>
+            <p>
+                <strong>问题 2：GitHub 推送不熟悉</strong><br>
+                git 命令好久不用有点生疏。解决方案：查文档，一步步来。
+            </p>
+            <p>
+                <strong>问题 3：内容方向犹豫</strong><br>
+                一开始想写太多主题，后来聚焦到"一人公司创业"这个核心。
+            </p>
+
+            <h2>💰 成本支出</h2>
+            <table class="comparison-table">
+                <tr>
+                    <th>项目</th>
+                    <th>预算</th>
+                    <th>实际</th>
+                </tr>
+                <tr><td>域名</td><td>¥700/年</td><td>待购买</td></tr>
+                <tr><td>服务器</td><td>¥0（Vercel 免费）</td><td>¥0</td></tr>
+                <tr><td>AI 工具</td><td>¥2000/月</td><td>已有账号</td></tr>
+                <tr><td><strong>合计</strong></td><td><strong>¥2700</strong></td><td><strong>¥0（第一周）</strong></td></tr>
+            </table>
+
+            <div class="highlight-box">
+                <p><strong>💡 成本洞察：</strong></p>
+                <p>第一周实际支出为 0，因为 AI 工具都是之前订阅的。<br>
+                正式支出从第二周开始（域名购买后）。<br>
+                一人公司的启动成本确实很低！</p>
+            </div>
+
+            <h2>📅 下周计划</h2>
+            <p>
+                <strong>目标 1：完成部署</strong><br>
+                • 购买域名 shifei.ai<br>
+                • 创建 GitHub 仓库<br>
+                • 部署到 Vercel<br>
+                • 提交搜索引擎
+            </p>
+            <p>
+                <strong>目标 2：持续输出</strong><br>
+                • 发布 5-7 篇新文章<br>
+                • 包括：创业日记 + 深度文章<br>
+                • 开始规划变现方式
+            </p>
+            <p>
+                <strong>目标 3：开始推广</strong><br>
+                • 在知乎分享创业心得<br>
+                • 在小红书发布笔记<br>
+                • 开始积累第一批粉丝
+            </p>
+
+            <h2>🎯 下周重点</h2>
+            <p>
+                第一周的重点是"搭建基础"，第二周的重点是"开始推广"。
+            </p>
+            <p>
+                网站再好，没人看也没用。所以下周要花更多时间在推广上。
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>🚀 第一周感悟：</strong></p>
+                <p>创业第一周，最大的收获不是写了多少文章，<br>
+                而是验证了一件事：我真的可以一个人开始。<br>
+                没有团队，没有投资，只有一台电脑和几个 AI 工具。<br>
+                但这，就够了。</p>
+            </div>
+
+            <p>
+                <strong>第二周，继续！</strong> 💪
+            </p>
+        </article>
+
+        <footer class="article-footer">
+            <p>感谢阅读我的第一周复盘！一起加油！</p>
+            <a href="/day3.html" class="next-article">← 上一篇</a>
+            <a href="/" class="next-article">返回首页 →</a>
+        </footer>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+    </footer>
+</body>
+</html>

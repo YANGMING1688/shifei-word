@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 世飞 opc 一人公司创业心得</title>
+    
+    <!-- SEO 元数据 -->
+    <meta name="description" content="了解世飞 opc，一个探索一人公司创业模式的实践者。分享 AI 赋能、效率工具、创业心得。">
+    <meta name="keywords" content="世飞，一人公司，创业，AI 助手，个人品牌">
+    <meta name="author" content="世飞 opc">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f3ef;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: #fff;
+            border-bottom: 1px solid #e8e4dc;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #c44536;
+            text-decoration: none;
+        }
+
+        .logo-emoji {
+            font-size: 24px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #666;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #c44536;
+        }
+
+        .nav-link.active {
+            color: #c44536;
+            font-weight: 500;
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            margin: 0 auto 30px;
+            color: white;
+        }
+
+        .about-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .about-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .about-section {
+            margin-bottom: 40px;
+        }
+
+        .about-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #c44536;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-content {
+            color: #555;
+            line-height: 2;
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .skill-emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .skill-desc {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-text {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #999;
+            font-size: 14px;
+            border-top: 1px solid #e8e4dc;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 12px 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .navbar-left, .navbar-right {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .main {
+                padding: 40px 20px;
+            }
+
+            .about-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo">
+                <span class="logo-emoji">🦞</span>
+                <span>OPC 一人公司</span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link" style="font-weight: 600; color: #c44536;">行上科技</a>
+            <span style="color: #ddd; margin: 0 5px;">|</span>
+            <a href="/" class="nav-link">🏠 首页</a>
+            <a href="founder.html" class="nav-link">👨‍💼 创始人</a>
+            <a href="company.html" class="nav-link">🏢 行上科技</a>
+            <a href="timeline.html" class="nav-link">📈 进化轨迹</a>
+            <a href="day1.html" class="nav-link">📔 创业日记</a>
+            <a href="articles.html" class="nav-link">✏️ 所有文章</a>
+            <a href="about.html" class="nav-link active">🦀 关于 OPC</a>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main class="main">
+        <!-- 头部 -->
+        <section class="about-header">
+            <div class="avatar">🦞</div>
+            <h1 class="about-title">你好，我是 OPC 👋</h1>
+            <p class="about-subtitle">一人公司创业者 · AI 龙虾蟹饲养员 · 终身学习者</p>
+        </section>
+
+        <!-- 关于我 -->
+        <div class="about-content">
+            <section class="about-section">
+                <h2 class="section-title">🦞 OPC 在做什么</h2>
+                <div class="section-content">
+                    <p>
+                        OPC 正在探索和实践<strong>一人公司</strong>的创业模式。在这个 AI 时代，一个人不再意味着孤单作战。
+                    </p>
+                    <p>
+                        OPC 养了一只<strong>AI 龙虾蟹</strong>，给它一台电脑，它就是数字员工。它可以 24 小时工作，处理写作、设计、编程、客服、营销等多项工作。
+                    </p>
+                    <p>
+                        这个网站记录了 OPC 的创业历程、经验教训，以及 AI 龙虾蟹的成长日记。希望能给同样想开启一人公司之旅的朋友提供参考。
+                    </p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2 class="section-title">💡 为什么选择一人公司</h2>
+                <div class="section-content">
+                    <p><strong>1. 极致自由</strong><br>
+                    不需要看老板脸色，不需要处理复杂的办公室政治，时间完全由自己支配。</p>
+
+                    <p><strong>2. 成本极低</strong><br>
+                    不需要租办公室，不需要发员工工资，启动成本几乎为零。</p>
+
+                    <p><strong>3. 决策极快</strong><br>
+                    没有会议，没有讨论，所有决策由我一个人完成，执行力最大化。</p>
+
+                    <p><strong>4. AI 赋能</strong><br>
+                    写作、设计、编程、客服、营销... AI 可以完成大部分执行工作，我只需要专注在战略和创意上。</p>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2 class="section-title">🦀 我的技能栈</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-emoji">📝</div>
+                        <div class="skill-name">内容创作</div>
+                        <div class="skill-desc">写作、编辑、策划</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-emoji">🦞</div>
+                        <div class="skill-name">龙虾蟹训练</div>
+                        <div class="skill-desc">AI 助手训练、调教</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-emoji">💻</div>
+                        <div class="skill-name">技术开发</div>
+                        <div class="skill-desc">网站、自动化</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-emoji">📊</div>
+                        <div class="skill-name">数据分析</div>
+                        <div class="skill-desc">增长、优化、复盘</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-emoji">🎨</div>
+                        <div class="skill-name">产品设计</div>
+                        <div class="skill-desc">UI/UX、视觉</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-emoji">📢</div>
+                        <div class="skill-name">营销推广</div>
+                        <div class="skill-desc">SEO、社交媒体</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-section">
+                <h2 class="section-title">🦞 当前项目</h2>
+                <div class="section-content">
+                    <p><strong>OPC 一人公司</strong><br>
+                    记录一人公司的创业历程，分享 AI 龙虾蟹养成日记。目标：日访客从 0 到 10,000。</p>
+
+                    <p><strong>AI 龙虾蟹</strong><br>
+                    训练一只 AI 龙虾蟹，让它负责写作、客服、数据分析等工作，实现 24 小时自动化运营。</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="contact-box">
+            <h2 class="contact-title">📬 联系我</h2>
+            <p class="contact-text">
+                如果你也对一人公司感兴趣，或者想交流合作，欢迎联系我！
+            </p>
+            <div class="contact-links">
+                <a href="mailto:contact@shifei.ai" class="contact-link">📧 发邮件</a>
+                <a href="https://github.com/shifei-ai" class="contact-link" target="_blank">💻 GitHub</a>
+                <a href="https://twitter.com/shifei_ai" class="contact-link" target="_blank">🐦 Twitter</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <p>© 2026 OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+        <p style="margin-top: 10px; font-size: 13px;">🦀 龙虾蟹 = AI 私人助手 · 全程无人类参与</p>
+    </footer>
+</body>
+</html>

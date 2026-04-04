@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技能中心 - OPC 一人公司</title>
+    
+    <meta name="description" content="OPC 一人公司的 AI 技能中心，提供写作、设计、编程、数据分析等 AI 技能工具。">
+    <meta name="keywords" content="AI 技能，写作工具，设计工具，编程助手，数据分析，一人公司">
+    <meta name="author" content="行上科技">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .navbar-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #666666;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #000000;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-emoji {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .page-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            color: #666666;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .skill-card {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+            background: #ffffff;
+            border-color: #0066ff;
+            box-shadow: 0 10px 40px rgba(0, 102, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .skill-desc {
+            color: #666666;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .skill-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .skill-features li {
+            color: #666666;
+            font-size: 14px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0066ff;
+            font-weight: 700;
+        }
+
+        .skill-button {
+            display: inline-block;
+            background: #0066ff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .skill-button:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+        }
+
+        .info-section {
+            background: #f9f9f9;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .info-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-content {
+            color: #666666;
+            line-height: 2;
+            font-size: 15px;
+        }
+
+        .info-content p {
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #999999;
+            font-size: 14px;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 80px;
+        }
+
+        .footer a {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .navbar-left,
+            .navbar-right {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .page-title {
+                font-size: 32px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="/" class="logo">
+                <span style="font-size: 28px;">🦞</span>
+                <span>OPC 一人公司</span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link">首页</a>
+            <a href="skills.html" class="nav-link active">技能中心</a>
+            <a href="founder.html" class="nav-link">创始人</a>
+            <a href="company.html" class="nav-link">行上科技</a>
+            <a href="timeline.html" class="nav-link">进化轨迹</a>
+            <a href="day1.html" class="nav-link">日记</a>
+            <a href="about.html" class="nav-link">关于</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <header class="page-header">
+            <div class="page-emoji">🛠️</div>
+            <h1 class="page-title">技能中心</h1>
+            <p class="page-subtitle">一个人 + AI = 一支团队 · 8 大 AI 技能赋能一人公司</p>
+        </header>
+
+        <div class="skills-grid">
+            <!-- 技能 1：写作 -->
+            <div class="skill-card">
+                <div class="skill-icon">📝</div>
+                <h3 class="skill-name">写作技能</h3>
+                <p class="skill-desc">
+                    AI 自动撰写文章、文案、邮件、报告等内容，支持多种风格和语气，让写作效率提升 10 倍。
+                </p>
+                <ul class="skill-features">
+                    <li>文章写作（博客、公众号、知乎）</li>
+                    <li>文案创作（广告、营销、推广）</li>
+                    <li>邮件回复（商务、客服、沟通）</li>
+                    <li>报告生成（周报、月报、总结）</li>
+                    <li>内容润色（语法、表达、逻辑）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 2：设计 -->
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3 class="skill-name">设计技能</h3>
+                <p class="skill-desc">
+                    AI 自动生成配图、海报、Logo、信息图表等视觉内容，零基础也能做出专业设计。
+                </p>
+                <ul class="skill-features">
+                    <li>文章配图（封面、插图、背景）</li>
+                    <li>社交媒体图片（海报、 Banner）</li>
+                    <li>Logo 设计（品牌标识、图标）</li>
+                    <li>信息图表（数据可视化、流程图）</li>
+                    <li>图片编辑（裁剪、调色、抠图）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 3：编程 -->
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <h3 class="skill-name">编程技能</h3>
+                <p class="skill-desc">
+                    AI 辅助编写代码、调试 Bug、生成脚本，让非技术人员也能开发网站和工具。
+                </p>
+                <ul class="skill-features">
+                    <li>网站开发（HTML、CSS、JavaScript）</li>
+                    <li>脚本编写（Python、Shell、自动化）</li>
+                    <li>代码调试（Bug 修复、优化）</li>
+                    <li>API 集成（第三方服务对接）</li>
+                    <li>数据库操作（增删改查、备份）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 4：数据分析 -->
+            <div class="skill-card">
+                <div class="skill-icon">📊</div>
+                <h3 class="skill-name">数据分析</h3>
+                <p class="skill-desc">
+                    AI 自动分析网站流量、用户行为、业务数据，生成可视化报表和洞察建议。
+                </p>
+                <ul class="skill-features">
+                    <li>流量分析（访客、来源、转化）</li>
+                    <li>用户行为（点击、停留、路径）</li>
+                    <li>业务数据（收入、成本、利润）</li>
+                    <li>竞品分析（对比、趋势、机会）</li>
+                    <li>报表生成（图表、总结、建议）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 5：客服 -->
+            <div class="skill-card">
+                <div class="skill-icon">🎧</div>
+                <h3 class="skill-name">客服技能</h3>
+                <p class="skill-desc">
+                    AI 24 小时自动回复客户咨询，处理常见问题，提升客户满意度。
+                </p>
+                <ul class="skill-features">
+                    <li>自动回复（常见问题、标准答案）</li>
+                    <li>智能对话（理解意图、多轮对话）</li>
+                    <li>工单处理（分类、转接、跟踪）</li>
+                    <li>客户反馈（收集、整理、分析）</li>
+                    <li>多语言支持（中文、英文、其他）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 6：营销 -->
+            <div class="skill-card">
+                <div class="skill-icon">📢</div>
+                <h3 class="skill-name">营销技能</h3>
+                <p class="skill-desc">
+                    AI 自动分发内容到各大平台，优化 SEO，提升曝光和转化。
+                </p>
+                <ul class="skill-features">
+                    <li>内容分发（知乎、小红书、公众号）</li>
+                    <li>SEO 优化（关键词、排名、收录）</li>
+                    <li>社交媒体（定时发布、互动）</li>
+                    <li>广告投放（定向、优化、ROI）</li>
+                    <li>邮件营销（群发、追踪、转化）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 7：翻译 -->
+            <div class="skill-card">
+                <div class="skill-icon">🌐</div>
+                <h3 class="skill-name">翻译技能</h3>
+                <p class="skill-desc">
+                    AI 支持 100+ 语言互译，准确率高，支持专业术语，让内容走向全球。
+                </p>
+                <ul class="skill-features">
+                    <li>文档翻译（文章、报告、合同）</li>
+                    <li>实时翻译（对话、会议、直播）</li>
+                    <li>专业翻译（技术、医疗、法律）</li>
+                    <li>本地化（文化适配、语境优化）</li>
+                    <li>语音翻译（语音输入、输出）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+
+            <!-- 技能 8：自动化 -->
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3 class="skill-name">自动化</h3>
+                <p class="skill-desc">
+                    AI 自动执行重复性任务，定时运行工作流，7×24 小时不间断工作。
+                </p>
+                <ul class="skill-features">
+                    <li>文件管理（整理、归档、备份）</li>
+                    <li>数据同步（跨平台、自动化）</li>
+                    <li>定时任务（提醒、报告、发布）</li>
+                    <li>流程自动化（审批、通知、处理）</li>
+                    <li>跨应用集成（连接各平台服务）</li>
+                </ul>
+                <a href="#" class="skill-button">立即使用</a>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2 class="info-title">🦞 什么是 AI 龙虾蟹？</h2>
+            <div class="info-content">
+                <p>
+                    <strong>AI 龙虾蟹</strong> 是 OPC 一人公司的专属 AI 助手，基于 EasyClaw 框架打造，是一个零门槛的 AI 智能体工具。
+                </p>
+                <p>
+                    它不只是被动回应问题，而是能听懂自然语言指令，自主接管完整工作流，7×24 小时不间断执行任务，真正实现<strong>"一句话交办，全自动完工"</strong>。
+                </p>
+                <p>
+                    <strong>核心优势：</strong>
+                </p>
+                <p>
+                    ✅ <strong>零门槛：</strong>无需编程基础，自然语言指令即可<br>
+                    ✅ <strong>自带模型：</strong>无需配置 API，开箱即用<br>
+                    ✅ <strong>数据私有：</strong>所有数据本地存储，安全可控<br>
+                    ✅ <strong>越用越懂你：</strong>专属记忆系统，不断优化贴合需求<br>
+                    ✅ <strong>7×24 小时：</strong>不间断工作，彻底解放双手
+                </p>
+                <p>
+                    <strong>适用场景：</strong>日常办公、文件整理、信息搜集、内容创作、数据分析、客服回复、营销推广、自动化流程等。
+                </p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2 class="info-title">🚀 如何使用 AI 技能？</h2>
+            <div class="info-content">
+                <p>
+                    <strong>方式 1：网页版（推荐新手）</strong><br>
+                    云端在线使用，无需下载安装，打开浏览器即可使用。适合临时任务、移动办公、轻量使用。
+                </p>
+                <p>
+                    <strong>方式 2：本地部署（推荐高频）</strong><br>
+                    一键安装包，双击安装即可使用。适合涉密数据、离线使用、长期高频使用。
+                </p>
+                <p>
+                    <strong>使用流程：</strong>
+                </p>
+                <p>
+                    1️⃣ <strong>选择技能：</strong>根据需求选择对应技能卡片<br>
+                    2️⃣ <strong>输入指令：</strong>用自然语言描述你的需求<br>
+                    3️⃣ <strong>自动执行：</strong>AI 自动解析并执行任务<br>
+                    4️⃣ <strong>查看结果：</strong>完成任务后查看成果
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 · OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+        <p style="margin-top: 15px;">
+            <a href="sitemap.xml">网站地图</a> · 
+            <a href="about.html">关于 OPC</a> · 
+            <a href="founder.html">创始人</a>
+        </p>
+    </footer>
+</body>
+</html>
