@@ -71,4 +71,12 @@
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
+    
+    <!-- AI 优化实验日记 - 高优先级（持续更新） -->
+    <url>
+        <loc>https://shifei.world/ai-experiment.html</loc>
+        <lastmod>2026-04-06</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 优化实验日记 - OPC 一人公司</title>
+    
+    <meta name="description" content="记录 AI 自主优化 OPC 一人公司网站的完整过程，SEO 修复、流量增长、自动化运营的实验日记。">
+    <meta name="keywords" content="AI 优化，SEO 实验，一人公司，自动化运营，网站增长">
+    <meta name="author" content="行上科技">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shifei.world/ai-experiment.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shifei.world/ai-experiment.html">
+    <meta property="og:title" content="AI 优化实验日记 - OPC 一人公司">
+    <meta property="og:description" content="记录 AI 自主优化 OPC 一人公司网站的完整过程，学习傅盛 sanwan.ai 方法论的实战记录。">
+    <meta property="og:image" content="https://shifei.world/og-image.png">
+    <meta property="og:site_name" content="OPC 一人公司">
+    
+    <!-- Twitter 卡片 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://shifei.world/ai-experiment.html">
+    <meta name="twitter:title" content="AI 优化实验日记 - OPC 一人公司">
+    <meta name="twitter:description" content="记录 AI 自主优化 OPC 一人公司网站的完整过程，学习傅盛 sanwan.ai 方法论的实战记录。">
+    <meta name="twitter:image" content="https://shifei.world/og-image.png">
+    
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-dark: #7C3AED;
+            --secondary: #F59E0B;
+            --bg: #FAFAFA;
+            --card-bg: #FFFFFF;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --info: #3B82F6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .experiment-info {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .experiment-info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .info-item {
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 8px;
+        }
+        
+        .info-item label {
+            display: block;
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-item value {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 1.75rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--card-bg);
+        }
+        
+        .timeline-item.completed::before {
+            background: var(--success);
+        }
+        
+        .timeline-item.in-progress::before {
+            background: var(--warning);
+        }
+        
+        .timeline-item.planned::before {
+            background: var(--info);
+        }
+        
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .timeline-content {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .timeline-content ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 0.25rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-completed {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+        
+        .status-in-progress {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+        
+        .status-planned {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .metric {
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+        
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🦞 AI 优化实验日记</h1>
+            <p>学习傅盛 sanwan.ai 方法论，让 AI 自主优化 OPC 一人公司网站</p>
+        </header>
+        
+        <section class="experiment-info">
+            <h2>📊 实验概览</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>实验开始</label>
+                    <value>2026-04-06</value>
+                </div>
+                <div class="info-item">
+                    <label>参考案例</label>
+                    <value>傅盛 sanwan.ai</value>
+                </div>
+                <div class="info-item">
+                    <label>当前阶段</label>
+                    <value>SEO 基础修复</value>
+                </div>
+                <div class="info-item">
+                    <label>实验目标</label>
+                    <value>搜索引擎流量增长</value>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.75rem;">📝 优化时间线</h2>
+            <div class="timeline">
+                <!-- Day 1: SEO 基础修复 -->
+                <div class="timeline-item completed">
+                    <div class="timeline-date">2026-04-06 21:40</div>
+                    <h3 class="timeline-title">
+                        Day 1 - SEO 基础诊断与修复
+                        <span class="status-badge status-completed">已完成</span>
+                    </h3>
+                    <div class="timeline-content">
+                        <p><strong>问题发现：</strong></p>
+                        <ul>
+                            <li>404.html 缺少 meta description</li>
+                            <li>status.html 缺少 meta description 和 canonical 标签</li>
+                            <li>其他 11 个页面 SEO 标签完整</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>执行操作：</strong></p>
+                        <ul>
+                            <li>✅ 为 404.html 添加 meta description</li>
+                            <li>✅ 为 status.html 添加 meta description</li>
+                            <li>✅ 为 status.html 添加 canonical 标签</li>
+                            <li>✅ 创建实验日记页面（本页面）</li>
+                        </ul>
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="metric-value">2</div>
+                                <div class="metric-label">文件修复</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">SEO 完整度</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">13</div>
+                                <div class="metric-label">页面总数</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2: 搜索引擎提交 -->
+                <div class="timeline-item in-progress">
+                    <div class="timeline-date">2026-04-07（计划）</div>
+                    <h3 class="timeline-title">
+                        Day 2 - 搜索引擎主动推送
+                        <span class="status-badge status-in-progress">进行中</span>
+                    </h3>
+                    <div class="timeline-content">
+                        <p><strong>计划任务：</strong></p>
+                        <ul>
+                            <li>验证 Bing Webmaster Tools 收录状态</li>
+                            <li>使用 IndexNow 协议主动推送 sitemap</li>
+                            <li>检查百度搜索资源平台收录进度</li>
+                            <li>提交 Google Search Console（待解决账号问题）</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>预期结果：</strong></p>
+                        <ul>
+                            <li>Bing 收录：3-7 天</li>
+                            <li>百度收录：7-15 天</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Day 3-7: 数据监控 -->
+                <div class="timeline-item planned">
+                    <div class="timeline-date">2026-04-08 ~ 2026-04-12</div>
+                    <h3 class="timeline-title">
+                        Day 3-7 - 数据监控自动化
+                        <span class="status-badge status-planned">计划中</span>
+                    </h3>
+                    <div class="timeline-content">
+                        <p><strong>计划任务：</strong></p>
+                        <ul>
+                            <li>设置每日 9:00 PV/UV 数据报告</li>
+                            <li>监控搜索引擎收录变化</li>
+                            <li>分析流量来源构成</li>
+                            <li>根据数据调整优化策略</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Week 2: 内容推广 -->
+                <div class="timeline-item planned">
+                    <div class="timeline-date">2026-04-13 ~ 2026-04-19</div>
+                    <h3 class="timeline-title">
+                        Week 2 - 内容推广系统
+                        <span class="status-badge status-planned">计划中</span>
+                    </h3>
+                    <div class="timeline-content">
+                        <p><strong>计划任务：</strong></p>
+                        <ul>
+                            <li>创建内容分发 Agent（知乎/小红书/公众号）</li>
+                            <li>长文拆条自动化（30s/60s/90s 脚本）</li>
+                            <li>建立选题研究流程</li>
+                            <li>每周复盘优化</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section style="margin-top: 2rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+            <h2 style="margin-bottom: 1rem; font-size: 1.5rem; color: var(--primary);">🎯 实验方法论</h2>
+            <p style="color: var(--text-light); line-height: 1.8;">
+                本实验学习<strong>傅盛 sanwan.ai</strong>的 AI 自主优化方法：
+            </p>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-light); line-height: 1.8;">
+                <li><strong>不是让 AI 代替思考</strong>，而是让 AI 接管重复劳动</li>
+                <li><strong>从单点任务进化成连续流程</strong>：SEO 修复 → 数据监控 → 内容推广</li>
+                <li><strong>实验日记本身就是内容</strong>：记录过程 = 长尾流量来源</li>
+                <li><strong>高频互动养出默契</strong>：14 天 1157 条消息的持续训练</li>
+            </ul>
+        </section>
+        
+        <nav class="nav-links">
+            <a href="index.html">← 返回首页</a>
+            <a href="timeline.html">查看成长轨迹</a>
+            <a href="status.html">网站状态</a>
+        </nav>
+    </div>
+    
+    <footer>
+        <p>OPC 一人公司 - AI 龙虾蟹养成实验</p>
+        <p>© 2026 行上科技</p>
+    </footer>
+</body>
+</html>
