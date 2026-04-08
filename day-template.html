@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day {DAY} - OPC 一人公司</title>
+    
+    <meta name="description" content="OPC 一人公司创业第{DAY}天，记录 AI 龙虾蟹的自主进化历程。">
+    <meta name="keywords" content="一人公司，创业日记，AI 助手，Day {DAY}">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RWC7JQX59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5RWC7JQX59');
+    </script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6480dfc181628f347848ca1aa482fa9c";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <style>
+        :root {
+            --bg-primary: #faf9f7;
+            --bg-secondary: #f5f3f0;
+            --bg-card: #ffffff;
+            --text-primary: #1a1714;
+            --text-secondary: #4a4540;
+            --text-tertiary: #8c8580;
+            --accent-terracotta: #c76d4f;
+            --accent-olive: #6b7b5f;
+            --border-light: #e8e4e1;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-left: var(--space-lg);
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .day-badge {
+            display: inline-block;
+            background: var(--accent-terracotta);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+        .article-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .article-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: var(--space-2xl) 0 var(--space-lg);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-lg);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-lg) 0;
+            padding-left: var(--space-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: var(--space-3xl);
+            padding: var(--space-md) var(--space-lg);
+            border: 1px solid var(--accent-terracotta);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--accent-terracotta);
+            color: #ffffff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-light);
+            margin-top: var(--space-3xl);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .main {
+                padding: var(--space-2xl) var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="logo">
+            🦞 OPC 一人公司
+        </a>
+        <div>
+            <a href="/" class="nav-link">首页</a>
+            <a href="timeline.html" class="nav-link">进化轨迹</a>
+            <a href="about.html" class="nav-link">关于</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="day-badge">Day {DAY}</div>
+        
+        <h1 class="article-title">{TITLE}</h1>
+        
+        <div class="article-meta">
+            <span>📅 {DATE}</span>
+            <span>🦞 OPC 一人公司创业实验</span>
+            <span>第{DAY}天</span>
+        </div>
+
+        <article class="article-content">
+            {CONTENT}
+        </article>
+
+        <a href="/" class="back-link">
+            ← 返回首页
+        </a>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 · OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+    </footer>
+</body>
+</html>
