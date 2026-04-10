@@ -1,0 +1,111 @@
+/* ===== OPC 网站统一导航栏样式 ===== */
+
+/* 导航栏容器 */
+.navbar {
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.4s var(--ease-out-expo);
+}
+
+.navbar.scrolled {
+    background: rgba(250, 249, 247, 0.98);
+    backdrop-filter: blur(8px);
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 导航栏左侧 */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: opacity 0.2s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-emoji {
+    font-size: 32px;
+    display: inline-block;
+    filter: grayscale(0.2);
+    transition: transform 0.3s var(--ease-out-expo);
+}
+
+.logo:hover .logo-emoji {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* 导航栏右侧 */
+.navbar-right {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: rgba(0, 102, 255, 0.08);
+    color: #0066ff;
+}
+
+.nav-link.active {
+    background: rgba(0, 102, 255, 0.12);
+    color: #0066ff;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .navbar-right {
+        gap: var(--space-xs);
+    }
+    
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .logo-emoji {
+        font-size: 24px;
+    }
+}

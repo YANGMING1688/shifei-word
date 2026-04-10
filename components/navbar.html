@@ -1,0 +1,140 @@
+<!-- OPC 网站统一导航栏组件 -->
+<!-- 在所有页面中使用相同的导航栏结构 -->
+
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-left">
+            <a href="/" class="logo">
+                <span class="logo-emoji">🦞</span>
+                <span>OPC 一人公司</span>
+            </a>
+        </div>
+        <div class="navbar-right">
+            <a href="/" class="nav-link" data-page="index">首页</a>
+            <a href="skills.html" class="nav-link" data-page="skills">🛠️ 技能</a>
+            <a href="founder.html" class="nav-link" data-page="founder">创始人</a>
+            <a href="company.html" class="nav-link" data-page="company">行上科技</a>
+            <a href="timeline.html" class="nav-link" data-page="timeline">进化轨迹</a>
+            <a href="day1.html" class="nav-link" data-page="diary">日记</a>
+            <a href="about.html" class="nav-link" data-page="about">关于</a>
+        </div>
+    </div>
+</nav>
+
+<!-- 导航栏样式 -->
+<style>
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.navbar-left .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    transition: opacity 0.2s;
+}
+
+.navbar-left .logo:hover {
+    opacity: 0.8;
+}
+
+.logo-emoji {
+    font-size: 24px;
+}
+
+.navbar-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: rgba(0, 102, 255, 0.08);
+    color: #0066ff;
+}
+
+.nav-link.active {
+    background: rgba(0, 102, 255, 0.12);
+    color: #0066ff;
+}
+
+/* 移动端响应式 */
+@media (max-width: 768px) {
+    .navbar-right {
+        gap: 12px;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+}
+</style>
+
+<!-- 导航栏激活脚本 -->
+<script>
+// 自动设置当前页面的导航栏激活状态
+(function() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const pageMap = {
+        '': 'index',
+        'index.html': 'index',
+        'skills.html': 'skills',
+        'founder.html': 'founder',
+        'company.html': 'company',
+        'timeline.html': 'timeline',
+        'day1.html': 'diary',
+        'day2.html': 'diary',
+        'day3.html': 'diary',
+        'day5.html': 'diary',
+        'about.html': 'about',
+        'articles.html': 'diary',
+        'ai-experiment.html': 'diary',
+        'week1-review.html': 'diary'
+    };
+    
+    const currentPageId = pageMap[currentPage] || 'index';
+    
+    // 移除所有 active 类
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // 添加 active 类到当前页面
+    const activeLink = document.querySelector(`.nav-link[data-page="${currentPageId}"]`);
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+})();
+</script>

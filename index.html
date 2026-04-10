@@ -139,17 +139,16 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* ===== 导航栏 - 杂志风格 ===== */
+        /* ===== 导航栏 - 固定不变 ===== */
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: var(--space-md) var(--space-xl);
             background: var(--bg-primary);
             border-bottom: 1px solid var(--border-light);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             transition: all 0.4s var(--ease-out-expo);
         }
 
@@ -158,10 +157,18 @@
             backdrop-filter: blur(8px);
         }
 
+        .navbar-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: var(--space-md) var(--space-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .navbar-left {
             display: flex;
             align-items: center;
-            gap: var(--space-lg);
         }
 
         .logo {
@@ -755,7 +762,9 @@
     </style>
     <!-- Bing Webmaster Tools Verification -->
     <meta name="msvalidate.01" content="78521A0F737619DED4D05A859C6B79CF" />
-</head>
+    <!-- 导航栏激活脚本 -->
+    <script src="components/navbar.js"></script>
+    </head>
 <body>
     <!-- 加载动画 -->
     <div class="loading" id="loading">
@@ -765,22 +774,24 @@
     <!-- 回到顶部按钮 -->
     <div class="back-to-top" id="backToTop" title="回到顶部">↑</div>
 
-    <!-- 导航栏 -->
+        <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
-        <div class="navbar-left">
-            <a href="/" class="logo">
-                <span class="logo-emoji">🦞</span>
-                <span>OPC 一人公司</span>
-            </a>
-        </div>
-        <div class="navbar-right">
-            <a href="/" class="nav-link active">首页</a>
-            <a href="skills.html" class="nav-link">🛠️ 技能</a>
-            <a href="founder.html" class="nav-link">创始人</a>
-            <a href="company.html" class="nav-link">行上科技</a>
-            <a href="timeline.html" class="nav-link">进化轨迹</a>
-            <a href="day1.html" class="nav-link">日记</a>
-            <a href="about.html" class="nav-link">关于</a>
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a href="/" class="logo">
+                    <span class="logo-emoji">🦞</span>
+                    <span>OPC 一人公司</span>
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a href="/" class="nav-link" data-page="index" class="nav-link active">首页</a>
+                <a href="skills.html" class="nav-link" data-page="skills">🛠️ 技能</a>
+                <a href="founder.html" class="nav-link" data-page="founder">创始人</a>
+                <a href="company.html" class="nav-link" data-page="company">行上科技</a>
+                <a href="timeline.html" class="nav-link" data-page="timeline">进化轨迹</a>
+                <a href="day1.html" class="nav-link" data-page="diary">日记</a>
+                <a href="about.html" class="nav-link" data-page="about">关于</a>
+            </div>
         </div>
     </nav>
 
