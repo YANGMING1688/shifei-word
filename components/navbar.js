@@ -7,7 +7,6 @@
     const pageMap = {
         '': 'index',
         'index.html': 'index',
-        'skills.html': 'skills',
         'founder.html': 'founder',
         'company.html': 'company',
         'timeline.html': 'timeline',
@@ -16,9 +15,9 @@
         'day3.html': 'diary',
         'day5.html': 'diary',
         'about.html': 'about',
-        'articles.html': 'diary',
-        'ai-experiment.html': 'diary',
-        'week1-review.html': 'diary',
+        'articles.html': 'articles',
+        'ai-experiment.html': 'articles',
+        'week1-review.html': 'articles',
         'status.html': 'index',
         'day-template.html': 'diary',
         '404.html': 'index'
