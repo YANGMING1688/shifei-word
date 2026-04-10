@@ -1,7 +1,7 @@
 <!-- OPC 网站统一导航栏组件 -->
-<!-- 在所有页面中使用相同的导航栏结构 -->
+<!-- 按照 day1.html 截图样式统一所有页面 -->
 
-<nav class="navbar">
+<nav class="navbar" id="navbar">
     <div class="navbar-container">
         <div class="navbar-left">
             <a href="/" class="logo">
@@ -21,87 +21,6 @@
     </div>
 </nav>
 
-<!-- 导航栏样式 -->
-<style>
-.navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
-
-.navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-}
-
-.navbar-left .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 18px;
-    transition: opacity 0.2s;
-}
-
-.navbar-left .logo:hover {
-    opacity: 0.8;
-}
-
-.logo-emoji {
-    font-size: 24px;
-}
-
-.navbar-right {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #666;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.2s;
-    white-space: nowrap;
-}
-
-.nav-link:hover {
-    background: rgba(0, 102, 255, 0.08);
-    color: #0066ff;
-}
-
-.nav-link.active {
-    background: rgba(0, 102, 255, 0.12);
-    color: #0066ff;
-}
-
-/* 移动端响应式 */
-@media (max-width: 768px) {
-    .navbar-right {
-        gap: 12px;
-    }
-    
-    .nav-link {
-        font-size: 14px;
-        padding: 6px 8px;
-    }
-}
-</style>
-
 <!-- 导航栏激活脚本 -->
 <script>
 // 自动设置当前页面的导航栏激活状态
@@ -120,7 +39,11 @@
         'about.html': 'about',
         'articles.html': 'articles',
         'ai-experiment.html': 'articles',
-        'week1-review.html': 'articles'
+        'week1-review.html': 'articles',
+        'skills.html': 'articles',
+        'status.html': 'index',
+        'day-template.html': 'diary',
+        '404.html': 'index'
     };
     
     const currentPageId = pageMap[currentPage] || 'index';
@@ -136,4 +59,24 @@
         activeLink.classList.add('active');
     }
 })();
+
+// 滚动时添加阴影效果
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        if (window.scrollY > 10) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+});
+
+// 初始化滚动状态
+window.addEventListener('load', function() {
+    const navbar = document.getElementById('navbar');
+    if (navbar && window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+    }
+});
 </script>
