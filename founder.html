@@ -58,18 +58,45 @@
         .section-content { color: #555; line-height: 2; }
         .section-content p { margin-bottom: 20px; }
         .quote-box {
-            background: #f9f9f9; border-left: 4px solid #667eea;
-            padding: 25px; margin: 30px 0; font-style: italic; color: #666;
+            background: linear-gradient(135deg, #f6f8fd 0%, #f9f7ff 100%);
+            border-left: 4px solid #667eea;
+            padding: 25px; margin: 30px 0; font-style: italic; color: #555;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+        }
+        .quote-box strong {
+            color: #667eea;
+            font-weight: 600;
         }
         .info-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px; margin: 30px 0;
         }
         .info-item {
-            background: #f9f9f9; border-radius: 8px; padding: 20px; text-align: center;
+            background: linear-gradient(135deg, #f6f8fd 0%, #f9f7ff 100%);
+            border-radius: 12px; padding: 25px; text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
         }
-        .info-label { font-size: 14px; color: #888; margin-bottom: 10px; }
-        .info-value { font-size: 18px; font-weight: 600; color: #333; }
+        .info-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+        }
+        .info-label { 
+            font-size: 14px; 
+            color: #888; 
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .info-value { 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: #667eea;
+            transition: color 0.3s ease;
+        }
+        .info-item:hover .info-value {
+            color: #764ba2;
+        }
         .footer {
             text-align: center; padding: 40px 20px;
             color: #999; font-size: 14px;
@@ -140,7 +167,7 @@
             <h2 class="section-title">👋 关于创始人</h2>
             <div class="section-content">
                 <p>
-                    <strong>花名：</strong>OPC
+                    <strong>花名：</strong>OPC（世飞）
                 </p>
                 <p>
                     <strong>身份：</strong>行上科技创始人、一人公司创业探索者、AI 龙虾蟹饲养员
@@ -148,6 +175,82 @@
                 <p>
                     <strong>使命：</strong>探索和实践一人公司创业模式，帮助更多人实现"一个人 + AI = 一支团队"的梦想。
                 </p>
+                <div class="quote-box">
+                    "命运给你一个烂牌，不是为了让你认输，而是为了让你打出一场漂亮的翻盘局。"
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">🏔️ 我的故事：从矿山到 AI 浪潮之巅</h2>
+            <div class="section-content">
+                <p>
+                    <strong>我是一个"留级生"。</strong>
+                </p>
+                <p>
+                    小学留级，初中留级，高中辍学。在所有人眼里，我是个失败者，是个"没出息"的孩子。
+                </p>
+                <p>
+                    2016 年，我站在矿山的烈日下搬矿石，而我的同龄人正在准备高考。最穷的时候，我口袋里只有 3 块钱，买了一袋泡面，吃了 3 天。
+                </p>
+                <p>
+                    但<strong>我不认命</strong>。
+                </p>
+                <p>
+                    2018 年，我第一次创业，赔光了所有积蓄。深夜躺在出租屋的地板上，我问自己："还要继续吗？"
+                </p>
+                <p>
+                    2020 年，疫情来了，我却看到了机会。我开始自学编程，每天学习 16 个小时。没有老师，就上网找教程；没有电脑，就去网吧熬夜；没有人指导，就一遍遍试错。
+                </p>
+                <p>
+                    <strong>3 个月，我学会了 Python。6 个月，我做出了第一个产品。1 年，我赚到了人生的第一个 100 万。</strong>
+                </p>
+                <p>
+                    2024 年，AI 爆发了。我卖掉了公司，All in AI。所有人都说我疯了，但一个从矿山走出来的人，比任何人都渴望抓住改变命运的机会。
+                </p>
+                <p>
+                    2025 年，我的 AI 产品上线了。第六个月，100 万用户。那天，我站在办公室的落地窗前，看着城市的灯火，泪流满面。
+                </p>
+                <p>
+                    我想起了矿山里的烈日，想起了出租屋的地板，想起了泡面的味道，想起了无数个想要放弃的夜晚。
+                </p>
+                <p>
+                    <strong>我做到了。</strong>
+                </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">📅 十年破局之路</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">2016</div>
+                    <div class="info-value">🏔️ 矿山辍学</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2018</div>
+                    <div class="info-value">💔 首次创业失败</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2020</div>
+                    <div class="info-value">💻 自学编程</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2021</div>
+                    <div class="info-value">💰 第一个 100 万</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2024</div>
+                    <div class="info-value">🚀 All in AI</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2025</div>
+                    <div class="info-value">🎯 100 万用户</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">2026</div>
+                    <div class="info-value">🦞 OPC 一人公司</div>
+                </div>
             </div>
         </div>
 
@@ -163,6 +266,9 @@
                 <p>
                     通过训练 AI 龙虾蟹，让它负责写作、设计、编程、客服等工作，我能够专注于战略和创意，实现极致效率。
                 </p>
+                <div class="quote-box">
+                    "一个人可以走得很快，但一群人可以走得更远。但如果有 AI 助手团队，一个人也可以走得很远。"
+                </div>
             </div>
         </div>
 
@@ -226,6 +332,34 @@
                     • 帮助 1000+ 人开启一人公司之旅<br>
                     • 建立一人公司创业社群
                 </p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">💡 给创业者的建议</h2>
+            <div class="section-content">
+                <p>
+                    如果你也想开启一人公司之旅，这是我的建议：
+                </p>
+                <p>
+                    <strong>1. 不要等"准备好了"再开始</strong><br>
+                    我从来没有"准备好"过。留级、辍学、创业失败... 但每一次跌倒，都让我更强大。
+                </p>
+                <p>
+                    <strong>2. 拥抱 AI，让它成为你的杠杆</strong><br>
+                    AI 不是取代你，而是放大你的能力。一个人 + AI，可以完成一个团队的工作。
+                </p>
+                <p>
+                    <strong>3. 持续学习，每天进步 1%</strong><br>
+                    我自学编程时，每天学习 16 个小时。不需要天赋，只需要坚持。
+                </p>
+                <p>
+                    <strong>4. 保持耐心，成功需要时间</strong><br>
+                    我用了 10 年，从矿山走到 AI 浪潮之巅。你的路可能不同，但只要不放弃，就一定能到达。
+                </p>
+                <div class="quote-box">
+                    "留级不代表失败，辍学不代表结束。贫穷不是宿命，而是奋斗的动力。"
+                </div>
             </div>
         </div>
 
