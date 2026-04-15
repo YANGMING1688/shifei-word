@@ -178,6 +178,18 @@
     <script src="components/navbar.js"></script>
     </head>
 <body>
+
+    <!-- 面包屑导航 -->
+    <nav class="breadcrumb" aria-label="面包屑导航">
+        <ol class="breadcrumb-list" style="display:flex;gap:8px;list-style:none;padding:15px 20px;margin:0;background:#f9f8f6;border-bottom:1px solid #e8e4dc;font-size:14px;">
+            <li class="breadcrumb-item"><a href="/index.html" style="color:#666;text-decoration:none;">首页</a></li>
+            <li class="breadcrumb-separator" style="color:#999;">/</li>
+            <li class="breadcrumb-item"><a href="/articles.html" style="color:#666;text-decoration:none;">文章</a></li>
+            <li class="breadcrumb-separator" style="color:#999;">/</li>
+            <li class="breadcrumb-item active" aria-current="page" style="color:#c44536;font-weight:500;">Day 2 - 为什么我选择一人公司模式而非传统创业</li>
+        </ol>
+    </nav>
+
                 <!-- 导航栏 -->
     <nav class="navbar" id="navbar">
         <div class="navbar-container">
@@ -404,5 +416,26 @@
     <footer class="footer">
         <p>© 2026 OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
     </footer>
+
+
+    <!-- 日记导航 -->
+    <nav class="diary-navigation" style="display:flex;justify-content:space-between;align-items:center;padding:20px;margin:30px 0;background:#fff;border:1px solid #e8e4dc;border-radius:12px;">
+        <a href="/day1.html" class="prev-diary" style="color:#666;text-decoration:none;display:flex;align-items:center;gap:8px;">
+            <span style="font-size:20px;">←</span>
+            <span>
+                <div style="font-size:12px;color:#999;">上一篇</div>
+                <div style="font-weight:600;color:#333;">Day 1</div>
+            </span>
+        </a>
+        <a href="/articles.html" class="all-diaries" style="color:#c44536;text-decoration:none;font-weight:500;">所有日记 →</a>
+        <a href="/day3.html" class="next-diary" style="color:#666;text-decoration:none;display:flex;align-items:center;gap:8px;text-align:right;">
+            <span>
+                <div style="font-size:12px;color:#999;">下一篇</div>
+                <div style="font-weight:600;color:#333;">Day 3</div>
+            </span>
+            <span style="font-size:20px;">→</span>
+        </a>
+    </nav>
+
 </body>
 </html>
