@@ -97,6 +97,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://shifei.world/day21.html</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://shifei.world/ai-experiment.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
