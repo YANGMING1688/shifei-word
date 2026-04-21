@@ -1,132 +1,148 @@
-======================================================================
+================================================================================
 SEO 自动优化报告
-生成时间：2026-04-20 12:37:32
-网站：https://shifei.world
-======================================================================
+生成时间：2026-04-20 12:42:51
+================================================================================
 
-📋 一、页面收录情况
-----------------------------------------------------------------------
-总页面数：20
+📊 一、页面收录情况
+----------------------------------------
+总页面数：19
+sitemap 收录：19
+
 日记页面：7
-其他页面：12
+文章列表：3
+静态页面：4
+其他页面：5
 
-页面列表:
-  🔴 [1.0] https://shifei.world/
-      更新频率：daily | 最后修改：2026-04-20
-  🟡 [0.8] https://shifei.world/day1.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day2.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day3.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day5.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day10.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day12.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/day15.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.9] https://shifei.world/articles.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.9] https://shifei.world/timeline.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.9] https://shifei.world/skills.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/about.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/founder.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/company.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟡 [0.8] https://shifei.world/ai-experiment.html
-      更新频率：weekly | 最后修改：2026-04-18
-  🟢 [0.7] https://shifei.world/week1-review.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟢 [0.7] https://shifei.world/inspiring-article.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟢 [0.7] https://shifei.world/cross-border-ecommerce.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟢 [0.7] https://shifei.world/status.html
-      更新频率：monthly | 最后修改：2026-04-18
-  🟢 [0.5] https://shifei.world/404.html
-      更新频率：monthly | 最后修改：2026-04-18
+📋 二、SEO 元素检查
+----------------------------------------
+存在问题的页面：19/19
+总问题数：57
 
+详细问题：
 
-🔍 二、SEO 元素检查
-----------------------------------------------------------------------
+  about.html:
+    ⚠️  Title 过短 (26 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-检查页面总数：20
-✅ 有 Title 标签：20 (100.0%)
-✅ 有 Meta Description：19 (95.0%)
-✅ 有 Meta Keywords：17 (85.0%)
-✅ 有结构化数据：20 (100.0%)
-✅ 有 Canonical 链接：20 (100.0%)
-✅ 有面包屑导航：19 (95.0%)
+  ai-experiment.html:
+    ⚠️  Title 过短 (28 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
+  articles.html:
+    ⚠️  Title 过短 (26 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-🔗 三、内部链接优化
-----------------------------------------------------------------------
-✅ 日记页面互链：已添加上一篇/下一篇导航
-✅ 首页最新日记推荐：已添加
-✅ 面包屑导航：已添加到所有页面
+  company.html:
+    ⚠️  Title 过短 (22 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
+  cross-border-ecommerce.html:
+    ⚠️  Title 过短 (19 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-🎯 四、关键词分析
-----------------------------------------------------------------------
-核心关键词:
-  • 一人公司
-  • 创业日记
-  • AI 助手
-  • AI 龙虾蟹
-  • OPC
-  • 效率工具
-  • 自动化部署
+  day1.html:
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-长尾关键词:
-  • 一人公司创业心得
-  • AI 赋能创业
-  • 个人品牌打造
-  • 远程工作工具
+  day10.html:
+    ⚠️  Title 过短 (27 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
+  day12.html:
+    ⚠️  Title 过短 (27 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-🌐 五、外部链接统计
-----------------------------------------------------------------------
-已配置的外部资源:
-  • Google Analytics: G-5RWC7JQX59
-  • 百度统计：6480dfc181628f347848ca1aa482fa9c
-  • RSS 订阅：/feed.xml
-  • PWA 支持：已启用
+  day15.html:
+    ⚠️  Title 过短 (29 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
+  day2.html:
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-💡 六、优化建议
-----------------------------------------------------------------------
-已完成优化:
-  ✅ sitemap.xml 已更新到最新
-  ✅ 所有页面包含完整的 SEO 元数据
-  ✅ 结构化数据 (Schema.org) 已添加
-  ✅ 日记页面互链已完成
-  ✅ 面包屑导航已添加
-  ✅ 首页添加最新日记推荐
+  day3.html:
+    ⚠️  Title 过短 (27 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-后续建议:
-  1. 提交 sitemap.xml 到 Google Search Console
-  2. 提交 sitemap.xml 到百度搜索资源平台
-  3. 定期检查 404 错误页面
-  4. 持续更新高质量内容
-  5. 监控核心关键词排名
-  6. 增加外部反向链接
+  day5.html:
+    ⚠️  Title 过短 (27 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
+  founder.html:
+    ⚠️  Title 过短 (25 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-⚙️ 七、技术 SEO 检查
-----------------------------------------------------------------------
-✅ 移动端适配：已优化 (viewport meta)
-✅ 页面加载速度：使用轻量级 CSS，无阻塞 JS
-✅ HTTPS：已启用
-✅ 规范化 URL：canonical 标签已添加
-✅ Robots.txt：需确认配置
-✅ 网站结构：扁平化结构，最多 2 层深度
+  index.html:
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
 
-======================================================================
-优化完成！
-======================================================================
+  inspiring-article.html:
+    ⚠️  缺少 title 标签
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
+
+  skills.html:
+    ⚠️  Title 过短 (27 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
+
+  status.html:
+    ⚠️  Title 过短 (21 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
+    ⚠️  缺少结构化数据 (Schema.org)
+    ⚠️  缺少 Open Graph 标签
+    ⚠️  缺少 canonical 链接
+
+  timeline.html:
+    ⚠️  Title 过短 (22 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
+
+  week1-review.html:
+    ⚠️  Title 过短 (25 字符，建议 30-60)
+    ⚠️  缺少 meta description
+    ⚠️  缺少 meta keywords
+
+🔑 三、关键词分析
+----------------------------------------
+高频关键词：
+
+🔗 四、链接分析
+----------------------------------------
+内部链接总数：77
+外部链接总数：2
+平均每页内部链接：4.1
+平均每页外部链接：0.1
+
+💡 五、优化建议
+----------------------------------------
+  ✓ 1. 修复 19 个页面的 SEO 问题（缺少 meta 标签、结构化数据等）
+  ✓ 3. 为 7 篇日记添加上一篇/下一篇导航链接
+  ✓ 4. 在首页添加最新日记推荐模块
+  ✓ 5. 为所有页面添加面包屑导航
+  ✓ 6. 定期检查并更新 sitemap.xml
+  ✓ 7. 提交 sitemap 到 Google Search Console 和百度搜索资源平台
+
+✅ 六、本次优化完成情况
+----------------------------------------
+  ✓ 已更新 sitemap.xml
+  ✓ 已扫描 19 个 HTML 文件
+  ✓ 已识别 57 个 SEO 问题
+  ✓ 已生成内部链接优化方案
+  ✓ 已生成面包屑导航方案
+
+================================================================================
+报告结束
+================================================================================
