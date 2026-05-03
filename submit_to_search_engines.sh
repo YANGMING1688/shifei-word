@@ -1,103 +1,86 @@
 #!/bin/bash
-#
-# 搜索引擎提交脚本
-# 提交 sitemap 到百度和 Bing
-#
+# 搜索引擎 URL 提交脚本
+# 生成 URL 列表并推送到各搜索引擎
 
-SITE="shifei.world"
-SITEMAP_URL="https://shifei.world/sitemap.xml"
+set -e
 
-echo "============================================================"
-echo "🚀 搜索引擎提交工具"
-echo "============================================================"
-echo ""
-echo "网站：$SITE"
-echo "Sitemap: $SITEMAP_URL"
-echo ""
-
-# 百度搜索资源平台提交
-echo "📝 百度搜索资源平台提交"
-echo "-----------------------------------------------------------"
-echo "请按以下步骤手动提交："
-echo ""
-echo "1. 访问：https://ziyuan.baidu.com/"
-echo "2. 登录并选择网站：$SITE"
-echo "3. 进入「资源提交」→「sitemap 提交」"
-echo "4. 输入 sitemap 地址：$SITEMAP_URL"
-echo "5. 点击提交"
-echo ""
-echo "或者使用 API 提交（需要 token）："
-echo ""
-echo "curl -H 'Content-Type:text/plain' --data-binary @urls.txt \"http://data.zz.baidu.com/urls?site=$SITE&token=YOUR_TOKEN\""
-echo ""
-echo "urls.txt 文件格式（每行一个 URL）："
-echo "https://shifei.world/"
-echo "https://shifei.world/day1.html"
-echo "https://shifei.world/day2.html"
-echo "..."
-echo ""
-
-# Bing Webmaster Tools 提交
-echo "📝 Bing Webmaster Tools 提交"
-echo "-----------------------------------------------------------"
-echo "请按以下步骤手动提交："
-echo ""
-echo "1. 访问：https://www.bing.com/webmasters"
-echo "2. 登录并选择网站：$SITE"
-echo "3. 进入「Sitemaps」"
-echo "4. 点击「Submit a Sitemap」"
-echo "5. 输入：$SITEMAP_URL"
-echo "6. 点击提交"
-echo ""
-
-# Google Search Console 提交
-echo "📝 Google Search Console 提交（可选）"
-echo "-----------------------------------------------------------"
-echo "请按以下步骤手动提交："
-echo ""
-echo "1. 访问：https://search.google.com/search-console"
-echo "2. 登录并选择网站：$SITE"
-echo "3. 进入「Sitemaps」"
-echo "4. 输入：sitemap.xml"
-echo "5. 点击提交"
-echo ""
-
-# 生成 URL 列表文件
-echo "📄 生成 URL 列表文件..."
-cd /Users/yangming/.openclaw-openclaw/workspace/shifei-opc-blog
-
-# 从 sitemap 提取 URL 列表
-grep "<loc>" sitemap.xml | sed 's/.*<loc>//;s/<\/loc>.*//' > urls_for_submission.txt
-URL_COUNT=$(wc -l < urls_for_submission.txt)
-
-echo "✅ 生成 urls_for_submission.txt，包含 $URL_COUNT 个 URL"
-echo ""
-echo "文件位置：/Users/yangming/.openclaw-openclaw/workspace/shifei-opc-blog/urls_for_submission.txt"
-echo ""
-
-# 显示收录查询方法
-echo "📈 收录查询方法"
-echo "============================================================"
-echo ""
-echo "百度收录查询："
-echo "  访问：https://www.baidu.com/s?wd=site:$SITE"
-echo "  或直接搜索：site:$SITE"
-echo ""
-echo "Bing 收录查询："
-echo "  访问：https://www.bing.com/search?q=site:$SITE"
-echo "  或直接搜索：site:$SITE"
-echo ""
-echo "Google 收录查询："
-echo "  访问：https://www.google.com/search?q=site:$SITE"
-echo "  或直接搜索：site:$SITE"
-echo ""
+BLOG_DIR="/Users/yangming/.openclaw-openclaw/workspace/shifei-opc-blog"
+SITE_URL="https://shifei.world"
 
 echo "============================================================"
-echo "✅ 提交指南生成完成！"
+echo "搜索引擎 URL 提交工具"
+echo "============================================================"
+
+cd "$BLOG_DIR"
+
+# 生成 URL 列表
+echo ""
+echo "📋 生成 URL 列表..."
+
+> urls.txt
+for file in *.html; do
+    # 跳过模板和错误页面
+    if [[ "$file" == "day-template.html" ]] || [[ "$file" == "404.html" ]]; then
+        continue
+    fi
+    
+    # 处理首页
+    if [[ "$file" == "index.html" ]]; then
+        echo "$SITE_URL/" >> urls.txt
+    else
+        echo "$SITE_URL/$file" >> urls.txt
+    fi
+done
+
+URL_COUNT=$(wc -l < urls.txt)
+echo "✅ 已生成 $URL_COUNT 个 URL"
+
+# 显示 URL 列表
+echo ""
+echo "URL 列表:"
+cat urls.txt | head -10
+echo "... (共 $URL_COUNT 个)"
+
+# 生成 IndexNow key 文件
+echo ""
+echo "🔑 生成 IndexNow key 文件..."
+INDEXNOW_KEY="indexnow_$(date +%Y%m%d_%H%M%S)"
+echo "$INDEXNOW_KEY" > "$INDEXNOW_KEY.txt"
+echo "✅ Key 文件已生成：$INDEXNOW_KEY.txt"
+echo "   请上传到网站根目录：https://shifei.world/$INDEXNOW_KEY.txt"
+
+# 百度推送提示
+echo ""
+echo "🔍 百度搜索资源平台提交:"
+echo "   1. 访问：https://ziyuan.baidu.com/site/index"
+echo "   2. 选择网站 shifei.world"
+echo "   3. 链接提交 → sitemap → 输入：https://shifei.world/sitemap.xml"
+echo ""
+echo "   或使用 API 推送:"
+echo "   curl -H 'Content-Type:text/plain' --data-binary @urls.txt \\"
+echo "     'http://data.zz.baidu.com/urls?site=shifei.world&token=YOUR_TOKEN'"
+
+# Bing 提交提示
+echo ""
+echo "🔍 Bing Webmaster Tools 提交:"
+echo "   1. 访问：https://www.bing.com/webmasters"
+echo "   2. 选择网站 shifei.world"
+echo "   3. Sitemaps → Submit a Sitemap → https://shifei.world/sitemap.xml"
+
+# Google 提交提示
+echo ""
+echo "🔍 Google Search Console 提交:"
+echo "   1. 访问：https://search.google.com/search-console"
+echo "   2. 选择网站 shifei.world"
+echo "   3. Sitemaps → 输入 sitemap.xml → 提交"
+
+echo ""
+echo "============================================================"
+echo "✅ URL 列表已准备就绪"
 echo "============================================================"
 echo ""
-echo "下一步操作："
-echo "1. 使用百度资源平台提交 sitemap 或 API 推送"
-echo "2. 使用 Bing Webmaster Tools 提交 sitemap"
-echo "3. 24-48 小时后检查收录情况"
+echo "下一步操作:"
+echo "1. 将 sitemap.xml 和 urls.txt 部署到网站根目录"
+echo "2. 将 $INDEXNOW_KEY.txt 上传到网站根目录"
+echo "3. 在各搜索引擎平台提交 sitemap"
 echo ""
