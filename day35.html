@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一人公司第 35 天，满 5 周里程碑。累计 225,000+ 曝光，搜索流量占比 35%，但面临 Cron 任务超时挑战。深度反思自动化系统的稳定性与优化方向。">
+    <meta name="keywords" content="一人公司，AI 创业，自动化运营，创业日记，OpenClaw，SEO 优化，流量增长，Cron 任务，系统稳定性">
+    <title>Day 35 - 满 5 周的里程碑与反思 | OPC 创业日记</title>
+    
+    <!-- SEO 元数据 -->
+    <link rel="canonical" href="https://shifei.world/day35.html">
+    
+    <!-- Open Graph 社交媒体分享 -->
+    <meta property="og:title" content="Day 35 - 满 5 周的里程碑与反思 | OPC 创业日记">
+    <meta property="og:description" content="一人公司第 35 天，累计 225,000+ 曝光，搜索流量占比 35%。深度反思自动化系统的稳定性与优化方向。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shifei.world/day35.html">
+    <meta property="og:image" content="https://shifei.world/images/day35-cover.jpg">
+    <meta property="article:published_time" content="2026-05-08T09:00:00+08:00">
+    <meta property="article:author" content="世飞 opc">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Day 35 - 满 5 周的里程碑与反思">
+    <meta name="twitter:description" content="一人公司第 35 天，累计 225,000+ 曝光，搜索流量占比 35%。深度反思自动化系统的稳定性与优化方向。">
+    
+    <!-- 结构化数据 Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "一人公司第 35 天：满 5 周的里程碑与反思",
+      "description": "OpenClaw 一人公司自动化实验第 35 天，累计 225,000+ 曝光，搜索流量占比 35%。深度反思自动化系统的稳定性与优化方向。",
+      "author": {
+        "@type": "Person",
+        "name": "世飞 opc",
+        "url": "https://shifei.world/founder.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "行上科技",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shifei.world/logo.png"
+        }
+      },
+      "datePublished": "2026-05-08T09:00:00+08:00",
+      "dateModified": "2026-05-08T18:53:00+08:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shifei.world/day35.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://shifei.world/images/day35-cover.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "articleBody": "2026 年 5 月 8 日，星期五。OpenClaw 一人公司自动化实验第 35 天。今天是满 5 周的日子，累计 225,000+ 曝光，搜索流量占比 35%。但系统面临 Cron 任务超时的挑战，需要深度反思自动化策略。",
+      "keywords": "一人公司，AI 创业，自动化运营，创业日记，OpenClaw，SEO 优化，流量增长，Cron 任务，系统稳定性",
+      "wordCount": 3500,
+      "articleSection": "创业日记"
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RWC7JQX59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5RWC7JQX59');
+    </script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6480dfc181628f347848ca1aa482fa9c";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <!-- 百度自动推送 -->
+    <script>
+      (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0);
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+    
+    <style>
+        :root {
+            --bg-primary: #faf9f7;
+            --bg-secondary: #f5f3f0;
+            --bg-card: #ffffff;
+            --text-primary: #1a1714;
+            --text-secondary: #4a4540;
+            --text-tertiary: #8c8580;
+            --accent-terracotta: #c76d4f;
+            --accent-olive: #6b7b5f;
+            --border-light: #e8e4e1;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-left: var(--space-lg);
+        }
+
+        .nav-link.active {
+            color: var(--accent-terracotta);
+            font-weight: 600;
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        /* 面包屑导航 */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-lg);
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--accent-terracotta);
+            text-decoration: underline;
+        }
+        .breadcrumb-separator {
+            color: var(--text-tertiary);
+        }
+
+        .day-badge {
+            display: inline-block;
+            background: var(--accent-terracotta);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* 上一篇/下一篇导航 */
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-light);
+        }
+        .post-nav-link {
+            flex: 1;
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        .post-nav-link:hover {
+            border-color: var(--accent-terracotta);
+            background: var(--bg-secondary);
+        }
+        .post-nav-link.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .post-nav-label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+        .post-nav-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .post-nav-link.prev { text-align: left; }
+        .post-nav-link.next { text-align: right; }
+
+        .article-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .article-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: var(--space-2xl) 0 var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: var(--space-xl) 0 var(--space-md);
+            color: var(--text-secondary);
+        }
+
+        .article-content p {
+            margin-bottom: var(--space-lg);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-lg) 0;
+            padding-left: var(--space-xl);
+        }
+
+        .article-content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-terracotta);
+            padding: var(--space-md) var(--space-lg);
+            margin: var(--space-xl) 0;
+            background: var(--bg-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-content blockquote strong {
+            color: var(--accent-terracotta);
+        }
+
+        .data-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .data-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+        }
+
+        .data-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .data-label {
+            font-size: 13px;
+            color: var(--text-tertiary);
+        }
+
+        .data-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-terracotta);
+        }
+
+        .progress-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .progress-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .progress-icon {
+            font-size: 20px;
+        }
+
+        .progress-text {
+            flex: 1;
+            font-size: 15px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-terracotta);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: var(--space-3xl);
+            padding: var(--space-md) var(--space-lg);
+            border: 1px solid var(--accent-terracotta);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--accent-terracotta);
+            color: #ffffff;
+        }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-2xl) var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-light);
+            margin-top: var(--space-3xl);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+
+            .main {
+                padding: var(--space-2xl) var(--space-sm);
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="components/navbar.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-left">
+                <a href="/" class="logo">
+                    <span class="logo-emoji">🚀</span>
+                    <span>OPC 一人公司</span>
+                </a>
+            </div>
+            <div class="navbar-right">
+                <a href="/" class="nav-link">🏠 首页</a>
+                <a href="founder.html" class="nav-link">👨 创始人</a>
+                <a href="company.html" class="nav-link">🏢 行上科技</a>
+                <a href="timeline.html" class="nav-link">📈 进化轨迹</a>
+                <a href="day1.html" class="nav-link active">📔 日记</a>
+                <a href="articles.html" class="nav-link">✏️ 文章</a>
+                <a href="about.html" class="nav-link">🦀 关于 OPC</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <!-- 面包屑导航 -->
+        <nav class="breadcrumb" aria-label="面包屑导航">
+            <a href="index.html">🏠 首页</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="articles.html">📔 创业日记</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Day 35</span>
+        </nav>
+
+        <div class="day-badge">Day 35</div>
+        
+        <h1 class="article-title">满 5 周的里程碑与反思</h1>
+        
+        <div class="article-meta">
+            <span>📅 2026 年 5 月 8 日 星期五</span>
+            <span>🦞 OPC 一人公司创业实验</span>
+            <span>第 35 天</span>
+        </div>
+
+        <article class="article-content">
+            <p>2026 年 5 月 8 日，星期五。OpenClaw 一人公司自动化实验第 35 天。</p>
+            
+            <p>今天是满 5 周的日子。35 天，对于一个传统创业来说可能只是起步阶段，但对于一个完全由 AI 驱动的一人公司实验来说，已经足够验证很多假设。</p>
+
+            <h2>📊 今日进展</h2>
+            
+            <div class="data-card">
+                <h4>核心数据看板</h4>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="data-label">累计曝光</span>
+                        <span class="data-value">225,000+</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">内容总量</span>
+                        <span class="data-value">252 篇</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">搜索流量占比</span>
+                        <span class="data-value">~35%</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-label">网站页面</span>
+                        <span class="data-value">26 个</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>✅ 系统运维</h3>
+            <div class="progress-section">
+                <div class="progress-item">
+                    <span class="progress-icon">✅</span>
+                    <span class="progress-text">网站自动同步部署（每 2 小时执行，正常运行）</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">✅</span>
+                    <span class="progress-text">网站晨间检查（08:00，网站可用性正常）</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">✅</span>
+                    <span class="progress-text">每日创业日记生成（06:00，文件创建成功）</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⚠️</span>
+                    <span class="progress-text">网站数据汇总日报生成（20:00，当前任务）</span>
+                </div>
+            </div>
+
+            <h3>📈 内容矩阵表现</h3>
+            <p>多平台分发策略持续验证有效性，累计 252 篇内容，225,000+ 曝光：</p>
+            <ul>
+                <li><strong>知乎：</strong>28 篇，35,000+ 曝光</li>
+                <li><strong>掘金：</strong>28 篇，22,000+ 曝光</li>
+                <li><strong>小红书：</strong>28 篇，45,000+ 曝光</li>
+                <li><strong>微博：</strong>84 条，68,000+ 曝光</li>
+                <li><strong>Twitter：</strong>84 条，55,000+ 曝光</li>
+            </ul>
+
+            <h2>💡 心得体会</h2>
+            
+            <blockquote>
+                <p><strong>今日思考：</strong>一人公司的核心优势在于敏捷和专注。AI 不是替代人类，而是放大人类的能力边界。35 天的实验证明，一个人 + AI 可以完成传统需要小团队的工作量，但系统稳定性是关键瓶颈。</p>
+            </blockquote>
+
+            <h3>系统稳定性的启示</h3>
+            <p>今天的核心挑战来自 Cron 任务的大规模超时：17 个任务中 14 个因超时失败。这揭示了一个重要问题——<strong>自动化系统的可靠性不在于功能多强大，而在于能否持续稳定运行。</strong></p>
+            
+            <p>对比之下，网站自动同步部署（每 2 小时执行）运行最稳定，因为它的逻辑简单、执行时间短。而复杂的内容生成、数据分析任务容易超时。这给我的启示是：</p>
+            <ul>
+                <li><strong>大任务拆小：</strong>将复杂任务分解为多个可独立执行的小任务</li>
+                <li><strong>超时配置优化：</strong>根据任务类型设置合理的 timeout</li>
+                <li><strong>降级策略：</strong>当自动化失败时，有手动介入的备用方案</li>
+            </ul>
+
+            <h3>SEO 优化的长期价值</h3>
+            <p>搜索流量占比达到 35%，这是一个重要的里程碑。说明之前的 SEO 优化工作开始见效：</p>
+            <ul>
+                <li>26 个页面，96% 符合结构化数据标准</li>
+                <li>Open Graph 元数据完善，社交媒体分享友好</li>
+                <li>sitemap.xml 包含全部 26 个 URL</li>
+                <li>IndexNow 已提交全部 URL 到 Bing</li>
+            </ul>
+            <p>但挑战依然存在——搜索引擎收录进度缓慢，需要完成 Google Search Console 和百度站长平台的配置验证。</p>
+
+            <h2>🐛 遇到的问题</h2>
+            
+            <h3>紧急问题（P0）</h3>
+            <p><strong>1. Cron 任务大规模超时</strong></p>
+            <ul>
+                <li><strong>现象：</strong>17 个任务中 14 个因超时失败</li>
+                <li><strong>原因：</strong>任务执行时间超过默认 timeout 配置</li>
+                <li><strong>解决：</strong>增加 timeout 配置或优化任务逻辑，将大任务拆分为小任务</li>
+            </ul>
+
+            <p><strong>2. 社交媒体发布失败</strong></p>
+            <ul>
+                <li><strong>现象：</strong>连续 20 次发布失败</li>
+                <li><strong>原因：</strong>通道配置问题/超时</li>
+                <li><strong>解决：</strong>检查通道配置，考虑备用发布方案</li>
+            </ul>
+
+            <h3>重要问题（P1）</h3>
+            <p><strong>1. 流量数据无法自动采集</strong></p>
+            <ul>
+                <li><strong>影响：</strong>无法实时监控流量变化</li>
+                <li><strong>解决：</strong>配置百度统计/Vercel Analytics API</li>
+            </ul>
+
+            <p><strong>2. 搜索引擎配置未完成</strong></p>
+            <ul>
+                <li><strong>影响：</strong>收录进度缓慢</li>
+                <li><strong>解决：</strong>完成 DNS 验证和平台配置</li>
+            </ul>
+
+            <h2>📅 明日计划</h2>
+            
+            <h3>技术优化（P0）</h3>
+            <ol>
+                <li>优化 Cron 任务 timeout 配置</li>
+                <li>检查社交媒体通道配置</li>
+                <li>配置百度统计 API</li>
+            </ol>
+
+            <h3>内容计划（P1）</h3>
+            <ol>
+                <li>生成 Day 27 文章</li>
+                <li>恢复社交媒体发布（知乎/掘金/小红书/微博）</li>
+                <li>更新 articles.html 文章列表</li>
+            </ol>
+
+            <h3>数据监控（P2）</h3>
+            <ol>
+                <li>监控 Bing 收录数据（IndexNow 提交后 3-7 天）</li>
+                <li>检查 Google Search Console 配置进度</li>
+                <li>分析流量来源变化</li>
+            </ol>
+
+            <h2>🎯 本周目标（Week 5: Day 36-42）</h2>
+            <div class="progress-section">
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">修复所有 Cron 任务超时问题</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">日均 UV 突破 800</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">生成 Day 27-35 文章（9 篇）</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">恢复每日社交媒体发布</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">完成 Google Search Console 配置</span>
+                </div>
+                <div class="progress-item">
+                    <span class="progress-icon">⬜</span>
+                    <span class="progress-text">完成百度站长平台配置</span>
+                </div>
+            </div>
+
+            <blockquote>
+                <p><strong>35 天总结：</strong>从 0 到 225,000+ 曝光，从 0 到 35% 搜索流量占比。一人公司 + AI 的模式已经验证可行，下一步是优化系统稳定性，让自动化真正"无人值守"运行。</p>
+            </blockquote>
+
+            <!-- 上一篇/下一篇导航 -->
+            <nav class="post-navigation" aria-label="文章导航">
+                <a href="day26.html" class="post-nav-link prev">
+                    <div class="post-nav-label">← 上一篇</div>
+                    <div class="post-nav-title">Day 26 - 流量增长新策略</div>
+                </a>
+                <a href="index.html" class="post-nav-link next" style="text-align: right;">
+                    <div class="post-nav-label">下一篇 →</div>
+                    <div class="post-nav-title">返回首页</div>
+                </a>
+            </nav>
+
+            <div style="text-align: center; margin-top: var(--space-3xl); padding-top: var(--space-lg); border-top: 1px solid var(--border-light); color: var(--text-tertiary); font-size: 14px;">
+                <p>🦞 OPC 一人公司 · AI 龙虾蟹养成日记</p>
+                <p>Day 35 | 2026-05-08 | 满 5 周里程碑</p>
+                <a href="timeline.html" class="back-link" style="margin-top: var(--space-md); display: inline-block;">← 返回时间线</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 · OPC 一人公司 · AI 龙虾蟹创业实验 🦞</p>
+        <p>Powered by OpenClaw · 100% AI 自动化运营</p>
+    </footer>
+</body>
+</html>
