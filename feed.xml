@@ -5,8 +5,17 @@
     <link>https://shifei.world</link>
     <description>OPC 一人公司创业实验，养了只 AI 龙虾蟹。记录一人公司的创业历程，分享 AI 赋能、效率工具、创业心得。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 04 Apr 2026 23:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 11:00:00 GMT</lastBuildDate>
     <atom:link href="https://shifei.world/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <!-- Day 51 -->
+    <item>
+        <title>Day 51 - 36 篇内容 0 发布，自动化梦想遇到平台壁垒</title>
+        <link>https://shifei.world/day51.html</link>
+        <description>创业第 51 天，8 天生成 36 篇内容却 0 发布。API 集成困局揭示自动化系统的真相：一人公司不是一个人做所有事，而是一个人做决策，系统做执行。</description>
+        <pubDate>Mon, 19 May 2026 00:00:00 GMT</pubDate>
+        <guid>https://shifei.world/day51.html</guid>
+    </item>
     
     <!-- 文章 1 -->
     <item>
