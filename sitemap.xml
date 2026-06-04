@@ -32,6 +32,12 @@
 
 <!-- 创业日记 - 中高优先级（按时间倒序） -->
 <url>
+<loc>https://shifei.world/day62.html</loc>
+<lastmod>2026-06-04</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
 <loc>https://shifei.world/day51.html</loc>
 <lastmod>2026-06-03</lastmod>
 <changefreq>weekly</changefreq>
