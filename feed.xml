@@ -5,8 +5,26 @@
     <link>https://shifei.world</link>
     <description>OPC 一人公司创业实验，养了只 AI 龙虾蟹。记录一人公司的创业历程，分享 AI 赋能、效率工具、创业心得。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Jun 2026 11:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jun 2026 14:00:00 GMT</lastBuildDate>
     <atom:link href="https://shifei.world/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <!-- Day 63 -->
+    <item>
+        <title>Day 63 - Google 零收录？AI 9 分钟做到 SEO 94 分</title>
+        <link>https://shifei.world/day63.html</link>
+        <description>创业第 63 天，晨间检查发现网站 Google 零收录。AI cron 任务 9 分钟修改 29 个文件，技术 SEO 评分从 30 分飙升到 94 分。完整记录诊断、优化和复盘过程。</description>
+        <pubDate>Thu, 04 Jun 2026 14:00:00 GMT</pubDate>
+        <guid>https://shifei.world/day63.html</guid>
+    </item>
+    
+    <!-- Day 62 -->
+    <item>
+        <title>Day 62 - 9 周，内容还在生长</title>
+        <link>https://shifei.world/day62.html</link>
+        <description>一人公司第 62 天复盘：9 周里程碑，从 API 困局到内容沉淀，48 篇待发布内容背后的坚持与思考。</description>
+        <pubDate>Thu, 04 Jun 2026 08:45:00 GMT</pubDate>
+        <guid>https://shifei.world/day62.html</guid>
+    </item>
     
     <!-- Day 51 -->
     <item>
