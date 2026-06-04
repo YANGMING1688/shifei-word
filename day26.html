@@ -392,6 +392,28 @@
             }
         }
     </style>
+
+    <!-- 面包屑导航结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://shifei.world/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Day 26 - 搜索流量破 30% 背后的致命问题",
+          "item": "https://shifei.world/day26.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- 面包屑导航 -->
@@ -768,7 +790,14 @@
         <div><a href="day25.html" class="internal-link prev">← 上一篇：Day 25</a></div>
         <div></div>
     </nav>
-</article>
+
+    <div style="margin-top:40px;padding:24px;background:#faf8f5;border-radius:12px;border:1px solid #e8e4dc;">
+        <h3 style="font-size:16px;font-weight:600;color:#2d2a26;margin-bottom:12px;">📖 继续阅读</h3>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+            <a href="day23.html" style="color:#c44536;text-decoration:none;font-weight:500;">Day 23 →</a>
+        </div>
+    </div>
+    </article>
     </main>
 
     <footer class="footer">
