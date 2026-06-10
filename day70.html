@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一人公司第 70 天：用 AI 搭了 15 个自动化任务、生成 100+ 篇文章，但自动发布到社交媒体的数量是 0。复盘自动化路径的三大陷阱，分享一人公司真正的瓶颈与破局方法。">
+    <meta name="keywords" content="一人公司，AI自动化，Cron任务，创业复盘，自动化陷阱，独立开发者，SEO优化，15个定时任务，效率提升，70天复盘">
+    <title>Day 70 - 我用 AI 替代了 8 个人，但最该自动化的事一直没做 | OPC 创业日记</title>
+    
+    <!-- SEO 元数据 -->
+    <link rel="canonical" href="https://shifei.world/day70.html">
+    
+    <!-- Open Graph 社交媒体分享 -->
+    <meta property="og:title" content="Day 70 - 我用 AI 替代了 8 个人，但最该自动化的事一直没做 | OPC 创业日记">
+    <meta property="og:description" content="一人公司第 70 天：15 个 Cron 任务、100+ 篇文章、SEO 94 分，但自动发布到社交媒体：0 篇。复盘自动化路径的三大陷阱。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shifei.world/day70.html">
+    <meta property="og:image" content="https://shifei.world/images/day70-cover.jpg">
+    <meta property="article:published_time" content="2026-06-10T14:00:00+08:00">
+    <meta property="article:author" content="世飞 opc">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Day 70 - 用 AI 替代了 8 个人，但最该自动化的事一直没做">
+    <meta name="twitter:description" content="一人公司第 70 天：15 个 Cron 任务、100+ 篇文章、SEO 94 分，但自动发布 0 篇。三大陷阱复盘。">
+    
+    <!-- 结构化数据 Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "一人公司第 70 天：我用 AI 替代了 8 个人，但最该自动化的事一直没做",
+      "description": "创业第 70 天，15 个 Cron 定时任务、100+ 篇原创内容、SEO 评分 94 分，但自动发布到社交媒体的文章数是 0。复盘自动化路径的三大陷阱：完美主义、技术沉迷、系统思维过度。分享一人公司真正的瓶颈与破局方法。",
+      "author": {
+        "@type": "Person",
+        "name": "世飞 opc",
+        "url": "https://shifei.world/founder.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "行上科技",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shifei.world/logo.png"
+        }
+      },
+      "datePublished": "2026-06-10T14:00:00+08:00",
+      "dateModified": "2026-06-10T14:00:00+08:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shifei.world/day70.html"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://shifei.world/images/day70-cover.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "articleBody": "创业第 70 天，15 个 Cron 任务、100+ 篇文章、SEO 94 分，但自动发布 0 篇。复盘自动化三大陷阱。",
+      "keywords": "一人公司，AI自动化，Cron任务，创业复盘，自动化陷阱，独立开发者",
+      "wordCount": 3000,
+      "articleSection": "创业日记"
+    }
+    </script>
+    
+    <!-- BreadcrumbList 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://shifei.world"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "文章",
+          "item": "https://shifei.world/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Day 70",
+          "item": "https://shifei.world/day70.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RWC7JQX59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5RWC7JQX59');
+    </script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6480dfc181628f347848ca1aa482fa9c";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <!-- 百度自动推送 -->
+    <script>
+      (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+    
+    <style>
+        :root {
+            --bg-primary: #faf9f7;
+            --bg-secondary: #f5f3f0;
+            --bg-card: #ffffff;
+            --text-primary: #1a1714;
+            --text-secondary: #4a4540;
+            --text-tertiary: #8c8580;
+            --accent-terracotta: #c76d4f;
+            --accent-olive: #6b7b5f;
+            --border-light: #e8e4e1;
+            --space-sm: 12px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-left: var(--space-lg);
+        }
+
+        .nav-link.active {
+            color: var(--accent-terracotta);
+            font-weight: 600;
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-lg);
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--accent-terracotta);
+            text-decoration: underline;
+        }
+        .breadcrumb-separator { color: var(--text-tertiary); }
+
+        .day-badge {
+            display: inline-block;
+            background: var(--accent-terracotta);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+        .article-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .article-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: var(--space-2xl) 0 var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: var(--space-xl) 0 var(--space-md);
+            color: var(--text-secondary);
+        }
+
+        .article-content p { margin-bottom: var(--space-lg); }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-lg) 0;
+            padding-left: var(--space-xl);
+        }
+
+        .article-content li { margin-bottom: 8px; }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-terracotta);
+            padding: var(--space-md) var(--space-lg);
+            margin: var(--space-xl) 0;
+            background: var(--bg-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-xl) 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: var(--space-md);
+            border: 1px solid var(--border-light);
+            text-align: left;
+        }
+
+        .article-content th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .article-content tr:nth-child(even) { background: var(--bg-primary); }
+
+        .article-content pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: var(--space-lg);
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: var(--space-xl) 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .article-content code {
+            font-family: "JetBrains Mono", "Fira Code", monospace;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .data-highlight {
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-olive));
+            color: #ffffff;
+            padding: var(--space-xl);
+            border-radius: 12px;
+            margin: var(--space-2xl) 0;
+        }
+
+        .data-highlight h3 {
+            color: #ffffff;
+            margin-bottom: var(--space-md);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .data-item { text-align: center; }
+
+        .data-value {
+            font-size: 28px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .data-label {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .alert-box {
+            background: #fff3f0;
+            border: 1px solid #ffccc7;
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .alert-box h4 {
+            color: #cf1322;
+            margin-bottom: 8px;
+        }
+
+        .success-box {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .success-box h4 {
+            color: #389e0d;
+            margin-bottom: 8px;
+        }
+
+        .insight-box {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h4 {
+            color: #d48806;
+            margin-bottom: 8px;
+        }
+
+        .read-next {
+            margin-top: var(--space-2xl);
+            padding: var(--space-lg);
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .read-next h3 { margin-bottom: var(--space-md); font-size: 18px; }
+
+        .read-next-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .read-next-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .read-next-card:hover {
+            border-color: var(--accent-terracotta);
+            transform: translateY(-2px);
+        }
+
+        .read-next-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .read-next-card p {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin: 0;
+        }
+
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .post-nav-link {
+            flex: 1;
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .post-nav-link:hover {
+            border-color: var(--accent-terracotta);
+            background: var(--bg-secondary);
+        }
+
+        .post-nav-link.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .post-nav-label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .post-nav-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .post-nav-link.prev { text-align: left; }
+        .post-nav-link.next { text-align: right; }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-2xl);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-light);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+
+        .footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: var(--space-md); }
+            .main { padding: var(--space-xl) var(--space-md); }
+            .article-meta { flex-wrap: wrap; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span>🦞</span>
+            <span>OPC 一人公司</span>
+        </a>
+        <div>
+            <a href="index.html" class="nav-link">首页</a>
+            <a href="articles.html" class="nav-link">文章</a>
+            <a href="timeline.html" class="nav-link">时间线</a>
+            <a href="skills.html" class="nav-link">技能</a>
+            <a href="founder.html" class="nav-link">关于</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="articles.html">文章</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Day 70</span>
+        </div>
+
+        <span class="day-badge">Day 70 · 2026-06-10</span>
+
+        <h1 class="article-title">我用 AI 替代了 8 个人，但最该自动化的事一直没做</h1>
+
+        <div class="article-meta">
+            <span>📅 2026 年 6 月 10 日 星期三</span>
+            <span>⏱️ 阅读时间 10 分钟</span>
+            <span>📝 字数 3,000</span>
+        </div>
+
+        <article class="article-content">
+            <p>创业第 70 天。回顾过去两个多月，我发现了一个反直觉的真相。</p>
+
+            <p>先看我过去 70 天的产出：</p>
+
+            <div class="data-highlight">
+                <h3>📊 70 天产出统计</h3>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="data-value">15</span>
+                        <span class="data-label">Cron 定时任务</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">100+</span>
+                        <span class="data-label">原创内容</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">94</span>
+                        <span class="data-label">SEO 评分</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">154K+</span>
+                        <span class="data-label">累计曝光</span>
+                    </div>
+                </div>
+            </div>
+
+            <p>这些数字听起来不错，但有一个关键指标是零：</p>
+
+            <div class="alert-box">
+                <h4>⚠️ 自动发布到社交媒体的文章数：0 篇</h4>
+                <p>我花了大量时间搭建内容生成系统、SEO 优化系统、自动化报告系统，但最关键的一环——把内容发到用户面前——一直是手动完成的。</p>
+            </div>
+
+            <h2>一、自动化的陷阱：容易的先做，难的拖着</h2>
+
+            <p>回头看，我的自动化路径是这样的：</p>
+
+            <h3>第一阶段（Day 1-20）：先做"爽"的部分</h3>
+            <ul>
+                <li>网站搭建 ✅（有成就感）</li>
+                <li>内容生成 ✅（看到文章就开心）</li>
+                <li>数据统计 ✅（数字让人兴奋）</li>
+            </ul>
+
+            <h3>第二阶段（Day 20-40）：做"有用"的部分</h3>
+            <ul>
+                <li>SEO 优化 ✅（94 分，技术上有挑战）</li>
+                <li>定时任务 ✅（15 个 cron，系统跑起来）</li>
+                <li>报告自动化 ✅（每天自动生成分析报告）</li>
+            </ul>
+
+            <h3>第三阶段（Day 40-70）：卡在"最后一公里"</h3>
+            <ul>
+                <li>社交媒体发布 ❌（API 未配置）</li>
+                <li>搜索引擎提交 ❌（需手动操作）</li>
+                <li>HTTPS 修复 ❌（拖了 16 天）</li>
+            </ul>
+
+            <div class="insight-box">
+                <h4>💡 发现规律了吗？</h4>
+                <p>我总是先做技术上有趣、心理上满足的事，而回避那些"无聊但关键"的基础设施。</p>
+            </div>
+
+            <h2>二、15 个 Cron 任务的技术架构</h2>
+
+            <p>在深入反思之前，先分享一下技术成果——这套系统确实省了我大量时间。</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>组件</th>
+                        <th>技术</th>
+                        <th>用途</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Agent 框架</td>
+                        <td>EasyClaw (Node.js)</td>
+                        <td>AI 任务调度</td>
+                    </tr>
+                    <tr>
+                        <td>定时任务</td>
+                        <td>Cron + AgentTurn</td>
+                        <td>定时执行</td>
+                    </tr>
+                    <tr>
+                        <td>内容生成</td>
+                        <td>LLM (qwen3.7-max)</td>
+                        <td>文章/报告生成</td>
+                    </tr>
+                    <tr>
+                        <td>网站</td>
+                        <td>静态 HTML + Nginx</td>
+                        <td>博客/落地页</td>
+                    </tr>
+                    <tr>
+                        <td>部署</td>
+                        <td>GitHub + Vercel</td>
+                        <td>自动部署</td>
+                    </tr>
+                    <tr>
+                        <td>SEO</td>
+                        <td>自研脚本</td>
+                        <td>结构化数据/元数据</td>
+                    </tr>
+                    <tr>
+                        <td>搜索提交</td>
+                        <td>IndexNow API</td>
+                        <td>Bing/Yandex 实时通知</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Cron 任务设计模式</h3>
+
+            <p><strong>模式 1：Isolated AgentTurn（推荐）</strong></p>
+            <p>大多数任务使用隔离会话，避免上下文污染：</p>
+
+            <pre><code>{
+  "schedule": { "kind": "cron", "expr": "0 10 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "agentTurn",
+    "message": "执行 SEO 检查并生成报告",
+    "timeoutSeconds": 1800
+  },
+  "sessionTarget": "isolated",
+  "delivery": { "mode": "announce" }
+}</code></pre>
+
+            <p>优点：每次执行独立，不受历史上下文影响；失败不影响其他任务；可以用不同模型和 thinking level。</p>
+
+            <p><strong>模式 2：Main Session SystemEvent</strong></p>
+            <p>少数需要对话上下文的任务，如晨间检查：</p>
+
+            <pre><code>{
+  "schedule": { "kind": "cron", "expr": "0 8 * * *", "tz": "Asia/Shanghai" },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "晨间检查时间，请检查网站状态和今日待办"
+  },
+  "sessionTarget": "main"
+}</code></pre>
+
+            <h2>三、一人公司的真正瓶颈</h2>
+
+            <p>70 天下来，我认为一人公司的瓶颈不是能力，而是<strong>优先级判断</strong>。</p>
+
+            <p>具体来说，有三个层次的陷阱：</p>
+
+            <h3>陷阱 1：完美主义</h3>
+            <p>"等 API 配好了再发布"——结果 70 天了一篇都没自动发。</p>
+            <p>正确做法：API 没好？手动发。发了再说。</p>
+
+            <h3>陷阱 2：技术沉迷</h3>
+            <p>SEO 从 60 分优化到 94 分，技术上很有成就感。但说实话，从 80 分到 94 分带来的额外流量可能不到 5%。</p>
+            <p>同样的时间，手动发 10 篇文章到知乎，效果可能更好。</p>
+
+            <h3>陷阱 3：系统思维过度</h3>
+            <p>我总想"建一个完美的系统"——从内容生成到自动发布到数据分析，全自动。</p>
+            <p>但现实是：<strong>70 天了，系统还没"闭环"。</strong></p>
+            <p>如果一开始就接受"内容 AI 生成 + 手动发布"的混合模式，早就跑起来了。</p>
+
+            <h2>四、自动化效率对比</h2>
+
+            <p>虽然走了一些弯路，但自动化确实带来了巨大的效率提升：</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>任务</th>
+                        <th>手动耗时</th>
+                        <th>自动耗时</th>
+                        <th>效率提升</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>内容生成</td>
+                        <td>4h/篇</td>
+                        <td>10min/篇</td>
+                        <td><strong>24x</strong></td>
+                    </tr>
+                    <tr>
+                        <td>SEO 检查</td>
+                        <td>2h/次</td>
+                        <td>5min/次</td>
+                        <td><strong>24x</strong></td>
+                    </tr>
+                    <tr>
+                        <td>报告生成</td>
+                        <td>1h/份</td>
+                        <td>2min/份</td>
+                        <td><strong>30x</strong></td>
+                    </tr>
+                    <tr>
+                        <td>网站部署</td>
+                        <td>30min/次</td>
+                        <td>自动</td>
+                        <td><strong>∞</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="success-box">
+                <h4>✅ 日均工作时间：2.5-3 小时</h4>
+                <p>相比传统创业的 10-12 小时，自动化系统每天节省 4+ 小时。这些时间可以用来思考战略、做内容审核、与用户互动——这些是 AI 暂时无法替代的高价值工作。</p>
+            </div>
+
+            <h2>五、第 70 天的觉醒</h2>
+
+            <p>过去一周，我做了一个重要决定：<strong>停止新增自动化，先让现有系统跑起来。</strong></p>
+
+            <p>具体来说：</p>
+
+            <ol>
+                <li><strong>手动发布优先</strong> — 不等 API，今天就开始发</li>
+                <li><strong>HTTPS 修复</strong> — 不再拖，本周解决</li>
+                <li><strong>搜索引擎提交</strong> — 手动提交 sitemap 到 Google/Bing</li>
+                <li><strong>内容更新恢复</strong> — 打破断更，恢复日更</li>
+            </ol>
+
+            <p>这些都不酷，不有趣，没有技术挑战。但它们是<strong>让系统真正产生价值</strong>的关键步骤。</p>
+
+            <h2>六、给一人公司创业者的建议</h2>
+
+            <p>如果你也在一人公司创业，我的建议是：</p>
+
+            <ol>
+                <li><strong>先跑通 MVP，再优化</strong> — 别像我一样，70 天了系统还没闭环</li>
+                <li><strong>自动化 ROI 最高的环节</strong> — 对你业务影响最大的，先自动化</li>
+                <li><strong>接受人机协作</strong> — 100% 自动化是幻觉，80% 自动化 + 20% 人工才是现实</li>
+                <li><strong>每周复盘优先级</strong> — 不要沉迷技术，要看业务产出</li>
+            </ol>
+
+            <blockquote>
+                一人公司最大的优势是灵活，最大的风险是自己骗自己。
+            </blockquote>
+
+            <p>第 70 天，从"自动化幻觉"中醒来。</p>
+
+            <p>技术再好，内容发不出去等于零。系统再完美，没有用户看到就没有价值。</p>
+
+            <p><strong>先跑通，再优化。共勉。</strong></p>
+        </article>
+
+        <div class="read-next">
+            <h3>📖 继续阅读</h3>
+            <div class="read-next-grid">
+                <a href="day63.html" class="read-next-card">
+                    <h4>Day 63 - Google 零收录？AI 9 分钟做到 SEO 94 分</h4>
+                    <p>网站被 Google 零收录后的自动化 SEO 优化实战</p>
+                </a>
+                <a href="day62.html" class="read-next-card">
+                    <h4>Day 62 - 9 周，内容还在生长</h4>
+                    <p>48 篇待发布内容背后的坚持与思考</p>
+                </a>
+                <a href="day51.html" class="read-next-card">
+                    <h4>Day 51 - 36 篇内容 0 发布</h4>
+                    <p>自动化梦想遇到平台壁垒</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="post-navigation">
+            <a href="day63.html" class="post-nav-link prev">
+                <div class="post-nav-label">← 上一篇</div>
+                <div class="post-nav-title">Day 63 - Google 零收录？AI 9 分钟做到 SEO 94 分</div>
+            </a>
+            <a href="#" class="post-nav-link next disabled">
+                <div class="post-nav-label">下一篇 →</div>
+                <div class="post-nav-title">敬请期待</div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 | <a href="https://shifei.world">shifei.world</a></p>
+        <p>记录一人公司的创业历程与 AI 赋能实验</p>
+    </footer>
+</body>
+</html>

@@ -20,7 +20,7 @@
 </url>
 <url>
 <loc>https://shifei.world/articles.html</loc>
-<lastmod>2026-06-04</lastmod>
+<lastmod>2026-06-10</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
@@ -153,6 +153,12 @@
 <url>
 <loc>https://shifei.world/day63.html</loc>
 <lastmod>2026-06-04</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://shifei.world/day70.html</loc>
+<lastmod>2026-06-10</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
