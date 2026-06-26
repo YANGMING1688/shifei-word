@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一人公司第 83 天：创业日记持续更新中，记录 AI 赋能一人公司的最新进展与思考。">
+    <meta name="keywords" content="一人公司，创业日记，AI 助手，Day 83，83天复盘">
+    <title>Day 83 - 创业第 83 天 | OPC 创业日记</title>
+    
+    <!-- SEO 元数据 -->
+    <link rel="canonical" href="https://shifei.world/day83.html">
+    
+    <!-- Open Graph 社交媒体分享 -->
+    <meta property="og:title" content="Day 83 - 创业第 83 天 | OPC 创业日记">
+    <meta property="og:description" content="一人公司第 83 天：持续进化中，记录最新进展与思考。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shifei.world/day83.html">
+    <meta property="article:published_time" content="2026-06-26T11:07:00+08:00">
+    <meta property="article:author" content="世飞 opc">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Day 83 - 创业第 83 天 | OPC 创业日记">
+    <meta name="twitter:description" content="一人公司第 83 天：持续进化中，记录最新进展与思考。">
+    
+    <!-- 结构化数据 Schema.org Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "一人公司第 83 天：创业日记",
+      "description": "创业第 83 天，持续进化中。",
+      "author": {
+        "@type": "Person",
+        "name": "世飞 opc",
+        "url": "https://shifei.world/founder.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "行上科技",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shifei.world/logo.png"
+        }
+      },
+      "datePublished": "2026-06-26T11:07:00+08:00",
+      "dateModified": "2026-06-26T11:07:00+08:00",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shifei.world/day83.html"
+      },
+      "articleBody": "创业第 83 天，持续进化中。",
+      "keywords": "一人公司，创业日记，AI 助手，Day 83",
+      "articleSection": "创业日记"
+    }
+    </script>
+    
+    <!-- BreadcrumbList 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://shifei.world"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "文章",
+          "item": "https://shifei.world/articles.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Day 83",
+          "item": "https://shifei.world/day83.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RWC7JQX59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5RWC7JQX59');
+    </script>
+    
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6480dfc181628f347848ca1aa482fa9c";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <!-- 百度自动推送 -->
+    <script>
+      (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+    
+    <style>
+        :root {
+            --bg-primary: #faf9f7;
+            --bg-secondary: #f5f3f0;
+            --bg-card: #ffffff;
+            --text-primary: #1a1714;
+            --text-secondary: #4a4540;
+            --text-tertiary: #8c8580;
+            --accent-terracotta: #c76d4f;
+            --accent-olive: #6b7b5f;
+            --border-light: #e8e4e1;
+            --space-sm: 12px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-left: var(--space-lg);
+        }
+
+        .nav-link.active {
+            color: var(--accent-terracotta);
+            font-weight: 600;
+        }
+
+        .main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-md);
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-lg);
+        }
+        .breadcrumb a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--accent-terracotta);
+            text-decoration: underline;
+        }
+        .breadcrumb-separator { color: var(--text-tertiary); }
+
+        .day-badge {
+            display: inline-block;
+            background: var(--accent-terracotta);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: var(--space-lg);
+        }
+
+        .article-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: var(--space-md);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .article-content {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .article-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: var(--space-2xl) 0 var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .article-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: var(--space-xl) 0 var(--space-md);
+            color: var(--text-secondary);
+        }
+
+        .article-content p { margin-bottom: var(--space-lg); }
+
+        .article-content ul,
+        .article-content ol {
+            margin: var(--space-lg) 0;
+            padding-left: var(--space-xl);
+        }
+
+        .article-content li { margin-bottom: 8px; }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent-terracotta);
+            padding: var(--space-md) var(--space-lg);
+            margin: var(--space-xl) 0;
+            background: var(--bg-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .article-content strong {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .data-highlight {
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--accent-olive));
+            color: #ffffff;
+            padding: var(--space-xl);
+            border-radius: 12px;
+            margin: var(--space-2xl) 0;
+        }
+
+        .data-highlight h3 {
+            color: #ffffff;
+            margin-bottom: var(--space-md);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .data-item { text-align: center; }
+
+        .data-value {
+            font-size: 28px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .data-label {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .insight-box {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            border-radius: 8px;
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .insight-box h4 {
+            color: #d48806;
+            margin-bottom: 8px;
+        }
+
+        .read-next {
+            margin-top: var(--space-2xl);
+            padding: var(--space-lg);
+            background: var(--bg-secondary);
+            border-radius: 12px;
+        }
+
+        .read-next h3 { margin-bottom: var(--space-md); font-size: 18px; }
+
+        .read-next-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .read-next-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: var(--space-md);
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .read-next-card:hover {
+            border-color: var(--accent-terracotta);
+            transform: translateY(-2px);
+        }
+
+        .read-next-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .read-next-card p {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin: 0;
+        }
+
+        .post-navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .post-nav-link {
+            flex: 1;
+            padding: var(--space-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .post-nav-link:hover {
+            border-color: var(--accent-terracotta);
+            background: var(--bg-secondary);
+        }
+
+        .post-nav-label {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+
+        .post-nav-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .post-nav-link.prev { text-align: left; }
+        .post-nav-link.next { text-align: right; }
+
+        .footer {
+            text-align: center;
+            padding: var(--space-2xl);
+            color: var(--text-tertiary);
+            font-size: 14px;
+            border-top: 1px solid var(--border-light);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer a {
+            color: var(--accent-terracotta);
+            text-decoration: none;
+        }
+
+        .footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .navbar { padding: var(--space-md); }
+            .main { padding: var(--space-xl) var(--space-md); }
+            .article-meta { flex-wrap: wrap; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <span>🦞</span>
+            <span>OPC 一人公司</span>
+        </a>
+        <div>
+            <a href="index.html" class="nav-link">首页</a>
+            <a href="articles.html" class="nav-link">文章</a>
+            <a href="timeline.html" class="nav-link">时间线</a>
+            <a href="skills.html" class="nav-link">技能</a>
+            <a href="founder.html" class="nav-link">关于</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="breadcrumb">
+            <a href="index.html">首页</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="articles.html">文章</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Day 83</span>
+        </div>
+
+        <span class="day-badge">Day 83 · 2026-06-26</span>
+
+        <h1 class="article-title">创业第 83 天：持续进化中</h1>
+
+        <div class="article-meta">
+            <span>📅 2026 年 6 月 26 日 星期五</span>
+            <span>⏱️ 阅读时间 5 分钟</span>
+            <span>📝 OPC 创业日记</span>
+        </div>
+
+        <article class="article-content">
+            <p>创业第 83 天。从 4 月 4 日启动到今天，已经走过了将近三个月。</p>
+
+            <div class="data-highlight">
+                <h3>📊 83 天数据概览</h3>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <span class="data-value">83</span>
+                        <span class="data-label">持续运行天数</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">15+</span>
+                        <span class="data-label">Cron 定时任务</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">100+</span>
+                        <span class="data-label">原创内容</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="data-value">12 周</span>
+                        <span class="data-label">进入第 12 周</span>
+                    </div>
+                </div>
+            </div>
+
+            <h2>今天的进展</h2>
+
+            <p>今天的日记页面已自动生成。请记录今天的关键进展：</p>
+
+            <ul>
+                <li>今天做了什么？</li>
+                <li>学到了什么新东西？</li>
+                <li>遇到了什么挑战？</li>
+                <li>明天计划做什么？</li>
+            </ul>
+
+            <div class="insight-box">
+                <h4>💡 Day 70 的复盘启示</h4>
+                <p>上次 Day 70 的深度复盘揭示了一个重要规律：<strong>先跑通 MVP，再优化</strong>。
+                70 天时系统还没闭环，最大的教训是不要沉迷于技术完美主义。
+                第 83 天，问自己：系统闭环了吗？内容发布到用户面前了吗？</p>
+            </div>
+
+            <h2>里程碑回顾</h2>
+
+            <p>从 Day 1 到 Day 83，一人公司经历了：</p>
+
+            <ol>
+                <li><strong>第 1-2 周</strong>：网站搭建、基础内容生成</li>
+                <li><strong>第 3-4 周</strong>：自动化系统初建、Cron 任务部署</li>
+                <li><strong>第 5-6 周</strong>：SEO 优化、搜索引擎提交</li>
+                <li><strong>第 7-9 周</strong>：内容库存积累、质量优化</li>
+                <li><strong>第 10-12 周</strong>：系统闭环探索、发布自动化</li>
+            </ol>
+
+            <blockquote>
+                一人公司不是独自战斗，而是让 AI 成为你的数字团队。83 天的实验证明，这条路是可行的——关键在于持续进化。
+            </blockquote>
+
+            <p><strong>Day 83，继续前行。</strong></p>
+        </article>
+
+        <div class="read-next">
+            <h3>📖 继续阅读</h3>
+            <div class="read-next-grid">
+                <a href="day70.html" class="read-next-card">
+                    <h4>Day 70 - 用 AI 替代了 8 个人，但最该自动化的事一直没做</h4>
+                    <p>复盘自动化路径的三大陷阱</p>
+                </a>
+                <a href="day63.html" class="read-next-card">
+                    <h4>Day 63 - Google 零收录？AI 9 分钟做到 SEO 94 分</h4>
+                    <p>自动化 SEO 优化实战</p>
+                </a>
+                <a href="day62.html" class="read-next-card">
+                    <h4>Day 62 - 9 周，内容还在生长</h4>
+                    <p>48 篇待发布内容的思考</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="post-navigation">
+            <a href="day70.html" class="post-nav-link prev">
+                <div class="post-nav-label">← 上一篇</div>
+                <div class="post-nav-title">Day 70 - 用 AI 替代了 8 个人，但最该自动化的事一直没做</div>
+            </a>
+            <a href="#" class="post-nav-link next" style="opacity: 0.5; pointer-events: none;">
+                <div class="post-nav-label">下一篇 →</div>
+                <div class="post-nav-title">敬请期待</div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 行上科技 | <a href="https://shifei.world">shifei.world</a></p>
+        <p>记录一人公司的创业历程与 AI 赋能实验</p>
+    </footer>
+</body>
+</html>
