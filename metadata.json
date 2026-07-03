@@ -1,0 +1,8 @@
+{
+  "name": "OPC 一人公司",
+  "description": "OPC 一人公司 - 一个面向高端 AI 自动化、全栈 SaaS MVP 以及高转化数字化系统的“一人公司”订阅制产品化服务机构，提供极高杠杆的“OPC”异步交付与运营模式。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
