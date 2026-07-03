@@ -246,6 +246,170 @@ Generate the complete JSON developer delivery note.`;
   }
 });
 
+// ============================================================
+// SEO Infrastructure: robots.txt, sitemap.xml, meta injection
+// ============================================================
+
+const SITE_URL = "https://shifei.world";
+const SITE_NAME = "一人公司";
+const SITE_NAME_EN = "One Person Company";
+
+// robots.txt - allow all crawlers, point to sitemap
+app.get("/robots.txt", (_req, res) => {
+  res.type("text/plain").send(`User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: ${SITE_URL}/sitemap.xml`);
+});
+
+// sitemap.xml - core pages for search engines
+app.get("/sitemap.xml", (_req, res) => {
+  const today = new Date().toISOString().split("T")[0];
+  res.type("application/xml").send(`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${SITE_URL}/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/?tab=ai-build</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/?tab=control-tower</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/?tab=planner</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>${SITE_URL}/?tab=playbook</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>`);
+});
+
+// Page metadata map for SEO meta tag injection
+const PAGE_META: Record<string, { title: string; desc: string; keywords: string }> = {
+  "/": {
+    title: "一人公司 - One Person Company | AI 自助搭建 SaaS 平台",
+    desc: "一人公司 SaaS 自助搭建平台。无需代码团队，AI 驱动一键生成全栈蓝图，月租算力自助部署到独立云容器，开启真正的一人收入帝国。",
+    keywords: "一人公司, AI搭建平台, SaaS自助部署, 全栈蓝图, 零代码开发, 一人企业, AI驱动开发, 独立部署, 云容器, 创业者工具",
+  },
+  "ai-build": {
+    title: "AI 搭建舱 - 一键生成全栈蓝图 | 一人公司",
+    desc: "AI 搭建舱：输入产品创意，Gemini AI 自动规划 4 周 Sprint 路线图、技术栈、商业模式和报价方案。一人公司帮你把想法变成可执行的技术蓝图。",
+    keywords: "AI搭建, 全栈蓝图生成, 技术方案规划, Sprint路线图, AI架构师, 一人公司",
+  },
+  "control-tower": {
+    title: "控制塔 - 项目管理工作台 | 一人公司",
+    desc: "一人公司控制塔：集中管理所有项目任务、进度追踪和 AI 辅助开发。一站式工作台，掌控全局。",
+    keywords: "项目管理, 控制塔, 任务工作台, AI开发助手, 进度追踪, 一人公司",
+  },
+  "planner": {
+    title: "智能规划器 - AI 项目规划工具 | 一人公司",
+    desc: "智能规划器：AI 驱动的项目规划工具，自动拆解需求、分配资源、估算工期和成本，为一人创业者提供高效决策支持。",
+    keywords: "智能规划, AI项目规划, 需求拆解, 资源估算, 一人公司工具",
+  },
+  "playbook": {
+    title: "极客黑匣子 - 自助部署极客秘籍 | 一人公司",
+    desc: "极客黑匣子：一人公司的技术知识库，涵盖 AI 自助部署教程、最佳实践、技术架构方案，助极客用户快速上手。",
+    keywords: "技术文档, 部署教程, 极客秘籍, AI部署指南, 一人公司知识库",
+  },
+};
+
+function getMetaForUrl(reqUrl: string) {
+  const url = new URL(reqUrl, SITE_URL);
+  const tab = url.searchParams.get("tab");
+  return PAGE_META[tab || ""] || PAGE_META["/"];
+}
+
+function injectSeoMeta(html: string, reqUrl: string): string {
+  const meta = getMetaForUrl(reqUrl);
+  const canonicalUrl = `${SITE_URL}${reqUrl}`;
+
+  const seoTags = `
+    <!-- SEO Meta Tags -->
+    <title>${meta.title}</title>
+    <meta name="description" content="${meta.desc}" />
+    <meta name="keywords" content="${meta.keywords}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="${SITE_NAME} | ${SITE_NAME_EN}" />
+    <meta property="og:title" content="${meta.title}" />
+    <meta property="og:description" content="${meta.desc}" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${meta.title}" />
+    <meta name="twitter:description" content="${meta.desc}" />
+
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "${SITE_NAME}",
+      "alternateName": "${SITE_NAME_EN}",
+      "url": "${SITE_URL}",
+      "description": "${PAGE_META["/"].desc}",
+      "sameAs": ["https://github.com/YANGMING1688"]
+    }
+    </script>
+
+    <!-- Structured Data: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "${SITE_NAME} AI 搭建平台",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "description": "一人公司 SaaS 自助搭建平台，AI 驱动全栈蓝图一键生成，面向创作者的极致生产力工具。",
+      "author": {
+        "@type": "Organization",
+        "name": "行上人工智能科技（云南）有限公司"
+      }
+    }
+    </script>
+
+    <!-- Baidu Verification Placeholder -->
+    <!-- <meta name="baidu-site-verification" content="YOUR_CODE_HERE" /> -->`;
+
+  // Remove existing title and meta tags to avoid duplicates
+  html = html.replace(/<title>[^<]*<\/title>/i, "");
+  html = html.replace(/<meta\s+name="description"[^>]*>/gi, "");
+  html = html.replace(/<meta\s+name="keywords"[^>]*>/gi, "");
+
+  // Inject SEO tags into <head>
+  html = html.replace("</head>", `${seoTags}\n  </head>`);
+  html = html.replace('lang="en"', 'lang="zh-CN"');
+
+  return html;
+}
+
 // Setup Vite server-side integration per instructions
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
@@ -254,11 +418,25 @@ async function startServer() {
       appType: "spa",
     });
     app.use(vite.middlewares);
+    // In dev, intercept HTML responses to inject SEO meta
+    app.get("*", (req, res, next) => {
+      if (req.headers.accept?.includes("text/html") && !req.url.startsWith("/api/")) {
+        const indexPath = path.resolve(__dirname, "index.html");
+        let html = require("fs").readFileSync(indexPath, "utf-8");
+        html = injectSeoMeta(html, req.url);
+        res.type("html").send(html);
+      } else {
+        next();
+      }
+    });
   } else {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
+      const indexPath = path.join(distPath, "index.html");
+      let html = require("fs").readFileSync(indexPath, "utf-8");
+      html = injectSeoMeta(html, req.url);
+      res.type("html").send(html);
     });
   }
 
